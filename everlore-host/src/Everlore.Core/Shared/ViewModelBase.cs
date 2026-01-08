@@ -1,13 +1,12 @@
-using Prism.Mvvm;
-using Prism.Navigation.Regions;
+namespace Everlore.Core.Shared;
 
-namespace Everlore.Host.ViewModels;
-
-public class ViewModelBase : BindableBase, INavigationAware
+/// <summary>
+/// Base class for all ViewModels in the application. Inherits from <see cref="BindableBase"/> (provided by Prism)
+/// and implements <see cref="INavigationAware"/> to allow ViewModels to react to navigation events.
+/// </summary>
+public class ViewModelBase : BindableBase,  INavigationAware
 {
     private string _title = string.Empty;
-
-    /// <summary>Gets or sets the title of the view.</summary>
     public string Title { get => _title; set => SetProperty(ref _title, value); }
 
     /// <summary>
@@ -16,30 +15,19 @@ public class ViewModelBase : BindableBase, INavigationAware
     /// </summary>
     /// <param name="navigationContext">The navigation context.</param>
     /// <returns><see langword="true"/> if this instance accepts the navigation request; otherwise, <see langword="false"/>.</returns>
-    public virtual bool IsNavigationTarget(NavigationContext navigationContext)
-    {
-        // Auto-allow navigation
-        return OnNavigatingTo(navigationContext);
-    }
+    public virtual bool IsNavigationTarget(NavigationContext navigationContext) => OnNavigatingTo(navigationContext);
 
     /// <summary>Called when the implementer is being navigated away from.</summary>
     /// <param name="navigationContext">The navigation context.</param>
-    public virtual void OnNavigatedFrom(NavigationContext navigationContext)
-    {
-    }
+    public virtual void OnNavigatedFrom(NavigationContext navigationContext) {}
 
     /// <summary>Called when the implementer has been navigated to.</summary>
     /// <param name="navigationContext">The navigation context.</param>
-    public virtual void OnNavigatedTo(NavigationContext navigationContext)
-    {
-    }
+    public virtual void OnNavigatedTo(NavigationContext navigationContext) {}
 
     /// <summary>Navigation validation checker.</summary>
     /// <remarks>Override for Prism 7.2's IsNavigationTarget.</remarks>
     /// <param name="navigationContext">The navigation context.</param>
     /// <returns><see langword="true"/> if this instance accepts the navigation request; otherwise, <see langword="false"/>.</returns>
-    public virtual bool OnNavigatingTo(NavigationContext navigationContext)
-    {
-        return true;
-    }
+    public virtual bool OnNavigatingTo(NavigationContext navigationContext) => true;
 }

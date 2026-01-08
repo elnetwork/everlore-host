@@ -24,7 +24,7 @@
 
     <!-- Dock the hamburger menu button to the top with no text -->
     <Button DockPanel.Dock="Top"
-            Command="{Binding CmdFlyoutMenu}"
+            Command="{Binding FlyoutSidebarCommand}"
             ToolTip.Tip="Expand/Collapse"
             Height="25">
       <StackPanel Orientation="Horizontal">
@@ -34,7 +34,7 @@
     </Button>
 
     <!-- Dock the Settings button to the bottom -->
-    <Button DockPanel.Dock="Bottom" Command="{Binding CmdSettings}" ToolTip.Tip="Settings">
+    <Button DockPanel.Dock="Bottom" Command="{Binding SettingsCommand}" ToolTip.Tip="Settings">
       <StackPanel Orientation="Horizontal">
         <PathIcon Data="{StaticResource settings_regular}" />
         <TextBlock Text="Navigation Sample" />
@@ -42,23 +42,25 @@
     </Button>
 
     <ScrollViewer>
-      <StackPanel>
-        <Button Command="{Binding CmdDashboard}" ToolTip.Tip="Dashboard">
-          <StackPanel Orientation="Horizontal">
-            <PathIcon Data="{StaticResource home_regular}" />
-            <TextBlock Text="Dashboard" />
-          </StackPanel>
-        </Button>
+      <ItemsControl ItemsSource="{Binding ModuleItems}">
+        <ItemsControl.ItemsPanel>
+          <ItemsPanelTemplate>
+            <StackPanel Orientation="Vertical" />
+          </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
 
-        <!-- Place additional buttons here... -->
-        <Button Command="{Binding .}" ToolTip.Tip="Dashboard">
-          <StackPanel Orientation="Horizontal">
-            <PathIcon Data="{StaticResource lock_regular}" />
-            <TextBlock Text="Something Else" />
-          </StackPanel>
-        </Button>
-
-      </StackPanel>
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <Button Command="{Binding NavigateCommand}"
+                    ToolTip.Tip="{Binding Title}">
+              <StackPanel Orientation="Horizontal">
+                <PathIcon Data="{Binding Icon}" />
+                <TextBlock Text="{Binding Title}" />
+              </StackPanel>
+            </Button>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
     </ScrollViewer>
   </DockPanel>
 </UserControl>

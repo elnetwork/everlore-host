@@ -3,6 +3,7 @@ using Prism.Commands;
 using Prism.Navigation.Regions;
 using Prism.Navigation;
 using System.Diagnostics;
+using Everlore.Core.Shared;
 
 namespace Everlore.Host.ViewModels;
 
@@ -26,7 +27,7 @@ public class SettingsViewModel : ViewModelBase
         };
 
         _regionManager.RequestNavigate(
-            RegionNames.ContentRegion,
+            RegionName.Content,
             nameof(SettingsSubView),
             navParams);
     });

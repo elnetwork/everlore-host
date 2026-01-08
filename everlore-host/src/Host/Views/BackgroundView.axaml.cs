@@ -1,26 +1,22 @@
-using Avalonia;
+﻿using Avalonia;
 using Avalonia.Controls;
+using Everlore.Core.Contracts;
 using Prism.Ioc;
-using Everlore.Host.Services;
 
 namespace Everlore.Host.Views;
 
-/// <summary>DashboardView.</summary>
-public partial class DashboardView : UserControl
+public partial class BackgroundView : UserControl
 {
-    public DashboardView()
-    {
-        InitializeComponent();
-    }
+    public BackgroundView() => InitializeComponent();
 
     protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
     {
         base.OnAttachedToVisualTree(e);
 
-        // Initialize the WindowNotificationManager with the "TopLevel". Previously (v0.10), MainWindow
         var notifyService = ContainerLocator.Current.Resolve<INotificationService>();
 #pragma warning disable CS8604 // Possible null reference argument.
         notifyService.SetHostWindow(TopLevel.GetTopLevel(this));
 #pragma warning restore CS8604 // Possible null reference argument.
     }
 }
+

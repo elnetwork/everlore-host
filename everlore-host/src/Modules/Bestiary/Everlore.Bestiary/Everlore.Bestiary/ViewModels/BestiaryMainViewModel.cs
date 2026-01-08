@@ -1,23 +1,22 @@
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using Avalonia;
 using Avalonia.Styling;
-using Prism.Commands;
-using Everlore.Host.Services;
+using Everlore.Core.Contracts;
+using Everlore.Core.Shared;
 
-namespace Everlore.Host.ViewModels;
+namespace Everlore.Bestiary.ViewModels;
 
-public class DashboardViewModel : ViewModelBase
+public class BestiaryMainViewModel : ViewModelBase
 {
-    private readonly INotificationService _notification;
+        private readonly INotificationService _notification;
 
     private int _counter = 0;
     private int _listItemSelected = -1;
-    private ObservableCollection<string> _listItems = new();
+    private ObservableCollection<string> _listItems = [];
     private string _listItemText = string.Empty;
     private ThemeVariant _themeSelected = ThemeVariant.Default;
 
-    public DashboardViewModel(INotificationService notifyService)
+    public BestiaryMainViewModel(INotificationService notifyService)
     {
         _notification = notifyService;
 
@@ -41,7 +40,7 @@ public class DashboardViewModel : ViewModelBase
 
     public DelegateCommand CmdNotification => new(() =>
     {
-        _notification.Show("Hello Prism!", "Notification Pop-up Message.");
+        _notification.Show("Hello Everlore!", "Notification Pop-up Message from Bestiary.");
 
         // Alternate OnClick action
         ////_notification.Show("Hello Prism!", "Notification Pop-up Message.", () =>
@@ -78,10 +77,10 @@ public class DashboardViewModel : ViewModelBase
         }
     }
 
-    public List<ThemeVariant> ThemeStyles => new()
-    {
+    public List<ThemeVariant> ThemeStyles =>
+    [
         ThemeVariant.Default,
         ThemeVariant.Dark,
-        ThemeVariant.Light,
-    };
+        ThemeVariant.Light
+    ];
 }

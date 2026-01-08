@@ -1,9 +1,8 @@
+using Everlore.Core.Shared;
+
 namespace Everlore.Host.ViewModels;
 
 public class MainWindowViewModel : ViewModelBase
 {
-    public MainWindowViewModel()
-    {
-        Title = "Prism.Avalonia - Full App Template!";
-    }
+    public MainWindowViewModel() => Title = "Everlore";
 }

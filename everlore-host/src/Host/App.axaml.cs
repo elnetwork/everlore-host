@@ -1,7 +1,10 @@
-using System.Diagnostics;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using Everlore.Bestiary;
+using Everlore.Core.Contracts;
+using Everlore.Core.Shared;
+using Everlore.Hero;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
@@ -22,62 +25,53 @@ public partial class App : PrismApplication
         base.Initialize();
     }
 
-    protected override AvaloniaObject CreateShell()
-    {
-        Debug.WriteLine("CreateShell()");
-        return Container.Resolve<MainWindow>();
-    }
+    protected override AvaloniaObject CreateShell() => Container.Resolve<MainWindow>();
 
     protected override void RegisterTypes(IContainerRegistry containerRegistry)
     {
-        Debug.WriteLine("RegisterTypes()");
-
-        // Note:
-        // SidebarView isn't listed, note we're using `AutoWireViewModel` in the View's AXAML.
-        // See the line, `prism:ViewModelLocator.AutoWireViewModel="True"`
-
-        // Services
+        // Services.
         containerRegistry.RegisterSingleton<INotificationService, NotificationService>();
+        containerRegistry.RegisterSingleton<IModuleCatalogService, ModuleCatalogService>();
 
-        // Views - Region Navigation
-        containerRegistry.RegisterForNavigation<DashboardView, DashboardViewModel>();
-        containerRegistry.RegisterForNavigation<SettingsView, SettingsViewModel>();
-        containerRegistry.RegisterForNavigation<SettingsSubView, SettingsSubViewModel>();
+        // Navigation.
+        containerRegistry.RegisterForNavigation<BackgroundView>(nameof(BackgroundView));
+        containerRegistry.RegisterForNavigation<SettingsView>();
+        containerRegistry.RegisterForNavigation<SettingsSubView>();
+
+        // View-models.
+        containerRegistry.Register<SidebarViewModel>();
 
         // Dialogs, etc.
     }
 
-    /// <summary>Register optional modules in the catalog.</summary>
-    /// <param name="moduleCatalog">Module Catalog.</param>
     protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
     {
-        Debug.WriteLine("ConfigureModuleCatalog()");
         base.ConfigureModuleCatalog(moduleCatalog);
+
+        // Register all modules.
+        moduleCatalog.AddModule<HeroModule>(InitializationMode.OnDemand);
+        moduleCatalog.AddModule<BestiaryModule>(InitializationMode.OnDemand);
     }
 
     /// <summary>Called after Initialize.</summary>
     protected override void OnInitialized()
     {
-        Debug.WriteLine("OnInitialized()");
-
         // Register Views to the Region it will appear in. Don't register them in the ViewModel.
         var regionManager = Container.Resolve<IRegionManager>();
 
         // WARNING: Prism v11.0.0-prev4
-        // - DataTemplates MUST define a DataType or else an XAML error will be thrown
-        // - Error: DataTemplate inside of DataTemplates must have a DataType set
-        regionManager.RegisterViewWithRegion(RegionNames.ContentRegion, typeof(DashboardView));
-        regionManager.RegisterViewWithRegion(RegionNames.SidebarRegion, typeof(SidebarView));
+        // - DataTemplates MUST define a DataType or else an XAML error will be thrown.
+        // - Error: DataTemplate inside of DataTemplates must have a DataType set.
+        regionManager.RegisterViewWithRegion(RegionName.Sidebar, typeof(SidebarView));
 
-        ////regionManager.RegisterViewWithRegion(RegionNames.DynamicSettingsListRegion, typeof(Setting1View));
-        ////regionManager.RegisterViewWithRegion(RegionNames.DynamicSettingsListRegion, typeof(Setting2View));
+        regionManager.RegisterViewWithRegion(RegionName.Content, typeof(BackgroundView));
+        regionManager.RequestNavigate(RegionName.Content, nameof(BackgroundView));
     }
 
     /// <summary>Custom region adapter mappings.</summary>
     /// <param name="regionAdapterMappings">Region Adapters.</param>
     protected override void ConfigureRegionAdapterMappings(RegionAdapterMappings regionAdapterMappings)
     {
-        Debug.WriteLine("ConfigureRegionAdapterMappings()");
         regionAdapterMappings.RegisterMapping<ContentControl, ContentControlRegionAdapter>();
     }
 }

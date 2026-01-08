@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using Everlore.Core.Shared;
 using Prism.Commands;
 using Prism.Navigation.Regions;
 using Everlore.Host.Views;
@@ -22,10 +23,8 @@ public class SettingsSubViewModel : ViewModelBase
     public DelegateCommand CmdNavigateBack => new(() =>
     {
         // Go back to the previous calling page, otherwise, Dashboard.
-        if (_journal != null && _journal.CanGoBack)
+        if (_journal is { CanGoBack: true })
             _journal.GoBack();
-        else
-            _regionManager.RequestNavigate(RegionNames.ContentRegion, nameof(DashboardView));
     });
 
     public string? MessageText { get => _messageText; set => SetProperty(ref _messageText, value); }

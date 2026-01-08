@@ -4,12 +4,10 @@
         xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:core="clr-namespace:Everlore.Host;assembly=Everlore.Host"
+        xmlns:core="clr-namespace:Everlore.Core.Shared;assembly=Everlore.Core"
         xmlns:prism="http://prismlibrary.com/"
         xmlns:views="clr-namespace:Everlore.Host.Views;assembly=Everlore.Host"
         xmlns:vm="clr-namespace:Everlore.Host.ViewModels;assembly=Everlore.Host"
-        mc:Ignorable="d" d:DesignWidth="700" d:DesignHeight="500"
         Height="500" Width="700"
         TransparencyLevelHint="AcrylicBlur"
         Background="Transparent"
@@ -39,14 +37,14 @@
       <!-- Main Content -->
       <ContentControl Grid.Row="0"
                       Grid.Column="1"
-                      prism:RegionManager.RegionName="{x:Static core:RegionNames.ContentRegion}" />
+                      prism:RegionManager.RegionName="{x:Static core:RegionName.Content}" />
 
       <!-- Footer -->
       <Panel Grid.Column="0"
              Grid.ColumnSpan="2"
              Grid.Row="1"
              Background="LightGray">
-        <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.FooterRegion}" />
+        <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionName.Footer}" />
       </Panel>
 
       <GridSplitter Grid.Row="1" Grid.ColumnSpan="2"

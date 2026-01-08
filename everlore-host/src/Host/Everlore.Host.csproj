@@ -9,20 +9,26 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-    <AvaloniaResource Include="Assets\**" />
+    <EmbeddedResource Include="Assets\**\*.json" />
+    <AvaloniaResource Include="Assets\**\*.ico" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.1.3" />
-    <PackageReference Include="Avalonia.Desktop" Version="11.1.3" />
-    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.1.3" />
-    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.1.3" />
+    <PackageReference Include="Avalonia" Version="11.3.10" />
+    <PackageReference Include="Avalonia.Desktop" Version="11.3.10" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.10" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.10" />
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.1.3" />
-    <PackageReference Include="HotAvalonia" Version="3.0.1" PrivateAssets="All"/>
-    <PackageReference Include="Prism.Avalonia" Version="9.0.537.11130" />
-    <PackageReference Include="Prism.DryIoc.Avalonia" Version="9.0.537.11130" />
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.3.10" />
+    <PackageReference Include="HotAvalonia" Version="3.0.2" PrivateAssets="All" />
+    <PackageReference Include="Prism.Avalonia" Version="9.0.537.11300-pre" />
+    <PackageReference Include="Prism.DryIoc.Avalonia" Version="9.0.537.11300-pre" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Everlore.Core\Everlore.Core.csproj" />
+    <ProjectReference Include="..\Modules\Bestiary\Everlore.Bestiary\Everlore.Bestiary\Everlore.Bestiary.csproj" />
+    <ProjectReference Include="..\Modules\Hero\Everlore.Hero\Everlore.Hero.csproj" />
   </ItemGroup>
 
 </Project>
