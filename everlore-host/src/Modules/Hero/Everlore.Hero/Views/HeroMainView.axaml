@@ -1,9 +1,10 @@
-﻿<UserControl xmlns="https://github.com/avaloniaui"
+﻿<UserControl x:Class="Everlore.Hero.Views.HeroMainView"
+             xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:system="clr-namespace:System;assembly=mscorlib"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             x:Class="Everlore.Hero.Views.HeroMainView">
+             Background="#191A1C">
   
   <UserControl.Styles>
     <Style Selector="Button">
@@ -23,18 +24,6 @@
       <Button Content="Add Item" Command="{Binding CmdAddItem}" />
       <Button Content="Clear" Command="{Binding CmdClearItems}" />
       <Button Content="Notification Pop-up" Command="{Binding CmdNotification}" />
-
-      <ComboBox VerticalAlignment="Center"
-                HorizontalAlignment="Stretch"
-                ItemsSource="{Binding ThemeStyles}"
-                SelectedItem="{Binding ThemeSelected}">
-        <!--SelectedIndex="{Binding ThemeSelectedIndex}" >-->
-        <ComboBox.ItemTemplate>
-          <DataTemplate x:DataType="x:String">
-            <TextBlock Text="{Binding TargetNullValue=Unset}" />
-          </DataTemplate>
-        </ComboBox.ItemTemplate>
-      </ComboBox>
     </StackPanel>
 
     <StackPanel Grid.Row="2" Orientation="Horizontal">

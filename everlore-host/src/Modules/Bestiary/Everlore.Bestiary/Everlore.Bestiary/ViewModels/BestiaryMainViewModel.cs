@@ -6,24 +6,13 @@ using Everlore.Core.Shared;
 
 namespace Everlore.Bestiary.ViewModels;
 
-public class BestiaryMainViewModel : ViewModelBase
+public class BestiaryMainViewModel(INotificationService notifyService) : ViewModelBase
 {
-        private readonly INotificationService _notification;
-
     private int _counter = 0;
     private int _listItemSelected = -1;
     private ObservableCollection<string> _listItems = [];
     private string _listItemText = string.Empty;
     private ThemeVariant _themeSelected = ThemeVariant.Default;
-
-    public BestiaryMainViewModel(INotificationService notifyService)
-    {
-        _notification = notifyService;
-
-#pragma warning disable CS8601 // Possible null reference assignment.
-        ThemeSelected = Application.Current!.RequestedThemeVariant;
-#pragma warning restore CS8601 // Possible null reference assignment.
-    }
 
     public DelegateCommand CmdAddItem => new(() =>
     {
@@ -40,7 +29,7 @@ public class BestiaryMainViewModel : ViewModelBase
 
     public DelegateCommand CmdNotification => new(() =>
     {
-        _notification.Show("Hello Everlore!", "Notification Pop-up Message from Bestiary.");
+        notifyService.Show("Hello Everlore!", "Notification Pop-up Message from Bestiary.");
 
         // Alternate OnClick action
         ////_notification.Show("Hello Prism!", "Notification Pop-up Message.", () =>
@@ -66,21 +55,4 @@ public class BestiaryMainViewModel : ViewModelBase
     public string ListItemText { get => _listItemText; set => SetProperty(ref _listItemText, value); }
 
     public ObservableCollection<string> ListItems { get => _listItems; set => SetProperty(ref _listItems, value); }
-
-    public ThemeVariant ThemeSelected
-    {
-        get => _themeSelected;
-        set
-        {
-            SetProperty(ref _themeSelected, value);
-            Application.Current!.RequestedThemeVariant = _themeSelected;
-        }
-    }
-
-    public List<ThemeVariant> ThemeStyles =>
-    [
-        ThemeVariant.Default,
-        ThemeVariant.Dark,
-        ThemeVariant.Light
-    ];
 }
