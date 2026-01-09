@@ -5,10 +5,12 @@
              prism:ViewModelLocator.AutoWireViewModel="True"
              x:Class="Everlore.Host.Views.SettingsSubView"
              x:CompileBindings="True"
-             x:DataType="vm:SettingsSubViewModel">
+             x:DataType="vm:SettingsSubViewModel"
+             Background="#191A1C">
+
   <DockPanel>
     <StackPanel DockPanel.Dock="Top" Spacing="5">
-      <Grid Background="LightGray" ColumnDefinitions="Auto, *">
+      <Grid ColumnDefinitions="Auto, *">
         <Button Command="{Binding CmdNavigateBack}" CornerRadius="10">
           <PathIcon Data="{StaticResource arrow_reply_regular}" />
         </Button>

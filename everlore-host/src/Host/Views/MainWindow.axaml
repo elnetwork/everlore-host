@@ -3,14 +3,13 @@
         x:CompileBindings="True"
         xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:core="clr-namespace:Everlore.Core.Shared;assembly=Everlore.Core"
         xmlns:prism="http://prismlibrary.com/"
         xmlns:views="clr-namespace:Everlore.Host.Views;assembly=Everlore.Host"
         xmlns:vm="clr-namespace:Everlore.Host.ViewModels;assembly=Everlore.Host"
         Height="500" Width="700"
         TransparencyLevelHint="AcrylicBlur"
-        Background="Transparent"
+        Background="#191A1C"
         Icon="/Assets/logo.ico"
         Title="{Binding Title}">
   <Panel>
@@ -23,9 +22,9 @@
       </ExperimentalAcrylicBorder.Material>
     </ExperimentalAcrylicBorder>
 
-    <Grid ColumnDefinitions="Auto,*" RowDefinitions="*,150,Auto">
+    <Grid ColumnDefinitions="Auto,*" RowDefinitions="*,Auto">
       <!-- Sidebar -->
-      <Panel Grid.Row="0" Grid.Column="0" Background="LightGray">
+      <Panel Grid.Row="0" Grid.Column="0" Background="#26282B">
 
         <!--
           The SidebarView is not using a region on purpose, so it shows in designer mode
@@ -39,23 +38,7 @@
                       Grid.Column="1"
                       prism:RegionManager.RegionName="{x:Static core:RegionName.Content}" />
 
-      <!-- Footer -->
-      <Panel Grid.Column="0"
-             Grid.ColumnSpan="2"
-             Grid.Row="1"
-             Background="LightGray">
-        <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionName.Footer}" />
-      </Panel>
-
-      <GridSplitter Grid.Row="1" Grid.ColumnSpan="2"
-                    VerticalAlignment="Top" Height="3"
-                    HorizontalAlignment="Stretch"
-                    BorderBrush="Gray"
-                    BorderThickness="1"
-                    Background="LightGray" />
-
-
-      <Panel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" Background="LightSteelBlue">
+      <Panel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Background="#26282B">
         <StackPanel Orientation="Horizontal" Spacing="5" Margin="5">
           <TextBlock Text="User Name: " FontWeight="Bold" />
           <TextBlock Text="PrismAvalonia!" FontStyle="Italic" />
@@ -67,7 +50,6 @@
           <TextBlock Text="0x07CC" FontStyle="Italic" />
         </StackPanel>
       </Panel>
-
     </Grid>
   </Panel>
 </Window>
