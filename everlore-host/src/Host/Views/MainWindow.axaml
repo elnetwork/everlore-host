@@ -9,7 +9,7 @@
         xmlns:vm="clr-namespace:Everlore.Host.ViewModels;assembly=Everlore.Host"
         Height="500" Width="700"
         TransparencyLevelHint="AcrylicBlur"
-        Background="#191A1C"
+        Background="#141414"
         Icon="/Assets/logo.ico"
         Title="{Binding Title}">
   <Panel>
@@ -33,11 +33,12 @@
         <views:SidebarView />
       </Panel>
 
-      <!-- Main Content -->
+      <!-- Workspace -->
       <ContentControl Grid.Row="0"
                       Grid.Column="1"
                       prism:RegionManager.RegionName="{x:Static core:RegionName.Content}" />
 
+      <!-- Status bar -->
       <Panel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Background="#26282B">
         <StackPanel Orientation="Horizontal" Spacing="5" Margin="5">
           <TextBlock Text="User Name: " FontWeight="Bold" />

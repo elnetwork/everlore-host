@@ -6,7 +6,7 @@
              x:Class="Everlore.Host.Views.SettingsSubView"
              x:CompileBindings="True"
              x:DataType="vm:SettingsSubViewModel"
-             Background="#191A1C">
+             Background="#141414">
 
   <DockPanel>
     <StackPanel DockPanel.Dock="Top" Spacing="5">

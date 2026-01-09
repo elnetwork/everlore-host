@@ -4,7 +4,7 @@
              xmlns:system="clr-namespace:System;assembly=mscorlib"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             Background="#191A1C">
+             Background="#141414">
   
   <UserControl.Styles>
     <Style Selector="Button">
