@@ -6,8 +6,12 @@
   <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
   <Application.Styles>
     <FluentTheme />
-
-    <!-- Custom SVG glyphs -->
-    <StyleInclude Source="avares://Everlore.Host/Styles/Icons.axaml" />
   </Application.Styles>
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceInclude Source="avares://Everlore.Core/Themes/Icons.axaml"/>
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Application.Resources>
 </Application>

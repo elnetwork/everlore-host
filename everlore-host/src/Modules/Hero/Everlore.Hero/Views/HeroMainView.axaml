@@ -17,6 +17,7 @@
       <Setter Property="Margin" Value="10" />
     </Style>
   </UserControl.Styles>
+  
   <Grid RowDefinitions="auto,auto,auto,*">
     <Label Content="Welcome to Everlore Hero!" FontSize="32" />
 
