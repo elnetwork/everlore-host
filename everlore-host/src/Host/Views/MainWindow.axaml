@@ -7,11 +7,12 @@
         xmlns:prism="http://prismlibrary.com/"
         xmlns:views="clr-namespace:Everlore.Host.Views;assembly=Everlore.Host"
         xmlns:vm="clr-namespace:Everlore.Host.ViewModels;assembly=Everlore.Host"
-        Height="500" Width="700"
-        TransparencyLevelHint="AcrylicBlur"
-        Background="#141414"
+        Title="{Binding Title}"
         Icon="/Assets/logo.ico"
-        Title="{Binding Title}">
+        TransparencyLevelHint="AcrylicBlur"
+        Height="500" Width="700"
+        Background="#141414">
+
   <Panel>
     <ExperimentalAcrylicBorder IsHitTestVisible="true">
       <ExperimentalAcrylicBorder.Material>
