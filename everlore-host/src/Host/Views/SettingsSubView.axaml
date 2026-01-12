@@ -3,7 +3,7 @@
              x:DataType="vm:SettingsSubViewModel"
              xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:vm="clr-namespace:Everlore.Host.ViewModels;assembly=Everlore.Host"
+             xmlns:vm="using:Everlore.Host.ViewModels"
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
              xmlns:icons="using:Everlore.Core.Themes"
