@@ -1,4 +1,12 @@
-﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <!-- Add Resources Here -->
-</ResourceDictionary>
+﻿<!-- FluentCustom.axaml -->
+<!-- Purpose: Custom overrides and extensions for the base FluentTheme. -->
+<!-- This file is optional. Use it only when you need to modify FluentTheme behavior globally -->
+<!-- (palette adjustments, default fonts, animations, etc.) that can't be achieved with resources or ControlThemes. -->
+
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Placeholder: Add global FluentTheme modifications here when needed -->
+    <!-- For now, empty - just acts as a hook -->
+
+</Styles>

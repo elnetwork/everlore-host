@@ -1,25 +1,23 @@
-﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+﻿<!-- ButtonThemes.axaml -->
+<!-- Purpose: Defines global ControlTheme for Button and common variants (primary, danger, etc.). -->
+<!-- Included as ResourceInclude in App.Resources for automatic application. -->
+
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <!-- Global Button override -->
     <ControlTheme x:Key="{x:Type Button}" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
         <Setter Property="Background" Value="{DynamicResource PrimaryBrush}"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="Padding" Value="16,8"/>
         <Setter Property="CornerRadius" Value="4"/>
-        <Setter Property="Cursor" Value="Hand"/>
-    
-        <Style Selector="^:pointerover">
-            <Setter Property="Background" Value="{DynamicResource PrimaryColorLight}"/>
-        </Style>
-    
-        <Style Selector="^:pressed">
-            <Setter Property="Background" Value="{DynamicResource PrimaryColor}"/>
-            <Setter Property="RenderTransform" Value="scale(0.98)"/>
-        </Style>
+        <!-- Placeholder: add more setters later -->
     </ControlTheme>
-    
-    <!-- Variante danger -->
+
+    <!-- Danger variant -->
     <ControlTheme x:Key="DangerButton" TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
         <Setter Property="Background" Value="{DynamicResource DangerColor}"/>
+        <!-- Placeholder -->
     </ControlTheme>
+
 </ResourceDictionary>

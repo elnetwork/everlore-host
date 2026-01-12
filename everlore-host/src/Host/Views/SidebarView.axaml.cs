@@ -4,8 +4,5 @@ namespace Everlore.Host.Views;
 
 public partial class SidebarView : UserControl
 {
-    public SidebarView()
-    {
-        InitializeComponent();
-    }
+    public SidebarView() => InitializeComponent();
 }

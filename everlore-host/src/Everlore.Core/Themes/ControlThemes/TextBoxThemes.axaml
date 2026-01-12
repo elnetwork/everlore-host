@@ -1,0 +1,13 @@
+﻿<!-- TextBoxThemes.axaml -->
+<!-- Purpose: Custom ControlTheme for TextBox, including validation states, focus, etc. -->
+
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ControlTheme x:Key="{x:Type TextBox}" TargetType="TextBox" BasedOn="{StaticResource {x:Type TextBox}}">
+        <Setter Property="Background" Value="{DynamicResource TextBoxBackgroundBrush}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource TextBoxBorderBrush}"/>
+        <!-- Placeholder: expand later -->
+    </ControlTheme>
+
+</ResourceDictionary>

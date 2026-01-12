@@ -1,8 +1,10 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using JetBrains.Annotations;
 
 namespace Everlore.Core.Themes;
 
+[UsedImplicitly]
 public partial class Icons : ResourceDictionary
 {
     public static readonly string Home       = "Icon.Home";
