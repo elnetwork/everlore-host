@@ -31,4 +31,8 @@
     <ProjectReference Include="..\Modules\Hero\Everlore.Hero\Everlore.Hero.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Infrastructure\Logging\" />
+  </ItemGroup>
+
 </Project>
