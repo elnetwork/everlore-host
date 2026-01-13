@@ -1,11 +1,13 @@
 ﻿using Everlore.Core.Shared;
-using Everlore.Hero.Views;
+using Everlore.Hero.Shell;
+using JetBrains.Annotations;
 
 namespace Everlore.Hero;
 
 /// <summary>
 /// Module for creating player characters.
 /// </summary>
+[UsedImplicitly]
 [Module(ModuleName = "HeroModule", OnDemand = true)]
 public class HeroModule : IModule
 {

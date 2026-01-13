@@ -4,7 +4,7 @@ using Avalonia.Styling;
 using Everlore.Core.Contracts;
 using Everlore.Core.Shared;
 
-namespace Everlore.Hero.ViewModels;
+namespace Everlore.Hero.Shell;
 
 public class HeroMainViewModel(INotificationService notifyService) : ViewModelBase
 {
