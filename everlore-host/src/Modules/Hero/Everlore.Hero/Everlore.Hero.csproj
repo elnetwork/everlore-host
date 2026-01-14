@@ -22,6 +22,7 @@
       <Folder Include="Features\AddItem\ViewModels\Commands\" />
       <Folder Include="Models\" />
       <Folder Include="Services\" />
+      <Folder Include="Shell\ViewModels\Commands\" />
     </ItemGroup>
 
     <ItemGroup>
@@ -37,7 +38,7 @@
         <DependentUpon>MenuBarView.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
-      <Compile Update="Shell\SideBarView.axaml.cs">
+      <Compile Update="Shell\SidebarView.axaml.cs">
         <DependentUpon>SideBarView.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
