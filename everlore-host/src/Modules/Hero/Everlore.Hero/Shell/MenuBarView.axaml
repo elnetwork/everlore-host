@@ -8,7 +8,7 @@
              x:CompileBindings="True">
     
     <StackPanel Orientation="Horizontal">
-        <Button Command="{Binding $parent[shell:HeroMainView].((vm:HeroMainViewModel)DataContext).FlyoutSidebarCommand}"
+        <Button Command="{Binding $parent[shell:HeroMainView].((vm:HeroMainViewModel)DataContext).FlyoutSidebarCommand, FallbackValue={x:Null}}"
                 ToolTip.Tip="Expand/Collapse"
                 Height="25">
             <StackPanel Orientation="Horizontal">

@@ -8,7 +8,7 @@
              mvvm:ViewModelLocator.AutoWireViewModel="True"
              x:DataType="vm:CommandBarViewModel"
              x:CompileBindings="True"
-             Width="{Binding $parent[shell:HeroMainView].((vm:HeroMainViewModel)DataContext).FlyoutWidth}">
+             Width="{Binding $parent[shell:HeroMainView].((vm:HeroMainViewModel)DataContext).FlyoutWidth, FallbackValue=200}">
 
     <StackPanel Orientation="Vertical">
         <StackPanel Orientation="Vertical">
