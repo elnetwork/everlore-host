@@ -1,18 +1,29 @@
 ﻿<UserControl x:Class="Everlore.Hero.Shell.MenuBarView"
              xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:icons="clr-namespace:Everlore.Core.Themes;assembly=Everlore.Core">
     
-    <Menu>
-        <MenuItem Header="_File">
-            <MenuItem Header="_Open..."/>
-            <Separator/>
-            <MenuItem Header="_Exit"/>
-        </MenuItem>
-        <MenuItem Header="H_ome">
-        </MenuItem>
-        <MenuItem Header="_View">
-        </MenuItem>
-        <MenuItem Header="_Help">
-        </MenuItem>
-    </Menu>
+    <StackPanel Orientation="Horizontal">
+        <Button ToolTip.Tip="Expand/Collapse"
+                Height="25">
+            <StackPanel Orientation="Horizontal">
+                <PathIcon Data="{StaticResource {x:Static icons:Icons.Hamburger}}" />
+                <TextBlock Text="" />
+            </StackPanel>
+        </Button>
+        
+        <Menu>
+            <MenuItem Header="_File">
+                <MenuItem Header="_Open..."/>
+                <Separator/>
+                <MenuItem Header="_Exit"/>
+            </MenuItem>
+            <MenuItem Header="H_ome">
+            </MenuItem>
+            <MenuItem Header="_View">
+            </MenuItem>
+            <MenuItem Header="_Help">
+            </MenuItem>
+        </Menu>
+    </StackPanel>
 </UserControl>
