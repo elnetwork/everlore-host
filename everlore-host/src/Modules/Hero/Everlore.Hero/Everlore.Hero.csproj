@@ -16,22 +16,29 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Common\" />
       <Folder Include="Features\AddItem\Cqrs\Dtos\" />
       <Folder Include="Features\AddItem\Cqrs\Handlers\" />
       <Folder Include="Features\AddItem\Cqrs\Validators\" />
       <Folder Include="Features\AddItem\ViewModels\Commands\" />
       <Folder Include="Models\" />
       <Folder Include="Services\" />
-      <Folder Include="Shell\Components\CommandBar\" />
-      <Folder Include="Shell\Components\MenuBar\" />
-      <Folder Include="Shell\Components\SideBar\" />
-      <Folder Include="Shell\Regions\" />
     </ItemGroup>
 
     <ItemGroup>
       <Compile Update="Shell\HeroMainView.axaml.cs">
         <DependentUpon>HeroMainView.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Shell\CommandBarView.axaml.cs">
+        <DependentUpon>CommandBarView.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Shell\MenuBarView.axaml.cs">
+        <DependentUpon>MenuBarView.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Shell\SideBarView.axaml.cs">
+        <DependentUpon>SideBarView.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
     </ItemGroup>
