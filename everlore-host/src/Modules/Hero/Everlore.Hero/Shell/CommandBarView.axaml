@@ -1,9 +1,9 @@
 ﻿<UserControl x:Class="Everlore.Hero.Shell.CommandBarView"
              xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mvvm="http://prismlibrary.com/"
+             xmlns:prism="http://prismlibrary.com/"
              xmlns:vm="using:Everlore.Hero.Shell.ViewModels"
-             mvvm:ViewModelLocator.AutoWireViewModel="True"
+             prism:ViewModelLocator.AutoWireViewModel="True"
              x:DataType="vm:CommandBarViewModel"
              x:CompileBindings="True">
     
