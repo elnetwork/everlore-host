@@ -1,5 +1,10 @@
 ﻿<UserControl x:Class="Everlore.Hero.Shell.CommandBarView"
              xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    Welcome to Avalonia!
+    
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+        <Button Content="Add Item" />
+        <Button Content="Delete" />
+        <Button Content="Archive" />
+    </StackPanel>
 </UserControl>
