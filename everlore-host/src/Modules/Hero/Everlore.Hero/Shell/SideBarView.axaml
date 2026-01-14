@@ -1,5 +1,51 @@
 ﻿<UserControl x:Class="Everlore.Hero.Shell.SideBarView"
              xmlns="https://github.com/avaloniaui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    Welcome to Avalonia!
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:icons="clr-namespace:Everlore.Core.Themes;assembly=Everlore.Core">
+
+    <StackPanel Orientation="Vertical">
+        <StackPanel Orientation="Vertical">
+            <Button>
+                <StackPanel Orientation="Horizontal">
+                    <PathIcon Data="{StaticResource {x:Static icons:Icons.Home}}" />
+                    <TextBlock Text="Main" />
+                </StackPanel>
+            </Button>
+            <Button>
+                <StackPanel Orientation="Horizontal">
+                    <PathIcon Data="{StaticResource {x:Static icons:Icons.Home}}" />
+                    <TextBlock Text="Bookmarks" />
+                </StackPanel>
+            </Button>
+            <Button>
+                <StackPanel Orientation="Horizontal">
+                    <PathIcon Data="{StaticResource {x:Static icons:Icons.Home}}" />
+                    <TextBlock Text="Deleted items" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <Separator />
+        <ScrollViewer>
+            <StackPanel Orientation="Vertical">
+                <Button>
+                    <StackPanel Orientation="Horizontal">
+                        <PathIcon Data="{StaticResource {x:Static icons:Icons.Home}}" />
+                        <TextBlock Text="Tag 1" />
+                    </StackPanel>
+                </Button>
+                <Button>
+                    <StackPanel Orientation="Horizontal">
+                        <PathIcon Data="{StaticResource {x:Static icons:Icons.Home}}" />
+                        <TextBlock Text="Tag 2" />
+                    </StackPanel>
+                </Button>
+                <Button>
+                    <StackPanel Orientation="Horizontal">
+                        <PathIcon Data="{StaticResource {x:Static icons:Icons.Home}}" />
+                        <TextBlock Text="Tag 3" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </ScrollViewer>
+    </StackPanel>
 </UserControl>
