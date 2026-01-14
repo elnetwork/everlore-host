@@ -1,4 +1,4 @@
-namespace Everlore.Core.Shared;
+namespace Everlore.Core.Common;
 
 /// <summary>
 /// Base class for all ViewModels in the application. Inherits from <see cref="BindableBase"/> (provided by Prism)

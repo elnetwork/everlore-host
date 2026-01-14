@@ -1,7 +1,7 @@
 using System.Linq;
 using System.Collections.ObjectModel;
 using Avalonia.Media;
-using Everlore.Core.Shared;
+using Everlore.Core.Common;
 using Everlore.Host.Services;
 using Everlore.Host.Views;
 using Prism.Commands;

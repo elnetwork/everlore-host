@@ -1,5 +1,5 @@
 using System.Diagnostics;
-using Everlore.Core.Shared;
+using Everlore.Core.Common;
 using Prism.Commands;
 using Prism.Navigation.Regions;
 using Everlore.Host.Views;

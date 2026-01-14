@@ -2,7 +2,7 @@
 using Avalonia;
 using Avalonia.Styling;
 using Everlore.Core.Contracts;
-using Everlore.Core.Shared;
+using Everlore.Core.Common;
 
 namespace Everlore.Bestiary.ViewModels;
 

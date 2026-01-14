@@ -3,7 +3,7 @@ using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Everlore.Bestiary;
 using Everlore.Core.Contracts;
-using Everlore.Core.Shared;
+using Everlore.Core.Common;
 using Everlore.Hero;
 using Prism.DryIoc;
 using Prism.Ioc;

@@ -1,4 +1,4 @@
-namespace Everlore.Core.Shared;
+namespace Everlore.Core.Common;
 
 /// <summary>
 /// Contains constant string values that define the names of regions used by Prism's RegionManager.

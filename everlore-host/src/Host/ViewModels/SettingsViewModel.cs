@@ -3,7 +3,7 @@ using Prism.Commands;
 using Prism.Navigation.Regions;
 using Prism.Navigation;
 using System.Diagnostics;
-using Everlore.Core.Shared;
+using Everlore.Core.Common;
 
 namespace Everlore.Host.ViewModels;
 

@@ -1,4 +1,4 @@
-﻿using Everlore.Core.Shared;
+﻿using Everlore.Core.Common;
 using Everlore.Hero.Shell;
 using JetBrains.Annotations;
 

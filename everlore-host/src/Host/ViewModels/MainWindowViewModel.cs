@@ -1,4 +1,4 @@
-using Everlore.Core.Shared;
+using Everlore.Core.Common;
 
 namespace Everlore.Host.ViewModels;
 

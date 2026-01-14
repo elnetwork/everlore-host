@@ -3,7 +3,7 @@
         x:CompileBindings="True"
         xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:core="using:Everlore.Core.Shared"
+        xmlns:core="using:Everlore.Core.Common"
         xmlns:prism="http://prismlibrary.com/"
         xmlns:views="using:Everlore.Host.Views"
         xmlns:vm="using:Everlore.Host.ViewModels"
