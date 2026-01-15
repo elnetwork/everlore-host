@@ -20,9 +20,10 @@
       <Folder Include="Features\AddItem\Cqrs\Handlers\" />
       <Folder Include="Features\AddItem\Cqrs\Validators\" />
       <Folder Include="Features\AddItem\ViewModels\Commands\" />
+      <Folder Include="Features\AddItem\Views\" />
       <Folder Include="Models\" />
       <Folder Include="Services\" />
-      <Folder Include="Shell\Commands\" />
+      <Folder Include="Shell\ViewModels\Commands\" />
     </ItemGroup>
 
     <ItemGroup>
