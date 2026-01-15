@@ -11,7 +11,7 @@ public class NavigationItemViewModel
     public string Title { get; init; } = string.Empty;
     public string ModuleName { get; init; } = string.Empty;
     public string NavigationPath { get; init; } = string.Empty;
-    public StreamGeometry? Icon { get; init; }
+    public string IconFilePath { get; init; } = string.Empty;
     public int Order { get; init; }
     public DelegateCommand<NavigationItemViewModel>? NavigateCommand { get; init; }
 }

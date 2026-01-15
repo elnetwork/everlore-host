@@ -30,7 +30,7 @@ public class SidebarViewModel : ViewModelBase
                 Title           = info.Title,
                 ModuleName      = info.ModuleName,
                 NavigationPath  = info.NavigationPath,
-                Icon            = StreamGeometry.Parse(info.IconData),
+                IconFilePath    = $"/Assets/Icons/{info.IconFileName}",
                 Order           = info.Order,
                 NavigateCommand = new DelegateCommand<NavigationItemViewModel>(_ =>
                 {

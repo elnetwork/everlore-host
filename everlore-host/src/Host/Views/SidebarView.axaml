@@ -21,9 +21,15 @@
 
   <DockPanel>
     <!-- Dock the Settings button to the bottom -->
-    <Button Command="{Binding SettingsCommand}" ToolTip.Tip="Settings"
+    <Button Command="{Binding SettingsCommand}"
+            ToolTip.Tip="Settings"
             DockPanel.Dock="Bottom">
-      <PathIcon Data="{StaticResource {x:Static icons:Icons.Settings}}" />
+      <Panel HorizontalAlignment="Stretch">
+        <PathIcon Data="{StaticResource {x:Static icons:Icons.Settings}}"
+                  Width="16"
+                  Height="16"
+                  Margin="0"/>
+      </Panel>
     </Button>
 
     <ScrollViewer>
@@ -38,7 +44,9 @@
           <DataTemplate>
             <Button Command="{Binding NavigateCommand}"
                     ToolTip.Tip="{Binding Title}">
-              <PathIcon Data="{Binding Icon}" />
+              <Svg Path="{Binding IconFilePath}"
+                   Width="24"
+                   Height="24"/>
             </Button>
           </DataTemplate>
         </ItemsControl.ItemTemplate>
