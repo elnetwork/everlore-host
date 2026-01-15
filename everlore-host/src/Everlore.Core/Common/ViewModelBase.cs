@@ -29,5 +29,5 @@ public class ViewModelBase : BindableBase,  INavigationAware
     /// <remarks>Override for Prism 7.2's IsNavigationTarget.</remarks>
     /// <param name="navigationContext">The navigation context.</param>
     /// <returns><see langword="true"/> if this instance accepts the navigation request; otherwise, <see langword="false"/>.</returns>
-    public virtual bool OnNavigatingTo(NavigationContext navigationContext) => true;
+    protected virtual bool OnNavigatingTo(NavigationContext navigationContext) => true;
 }

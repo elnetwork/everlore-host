@@ -4,9 +4,11 @@ using Prism.Navigation.Regions;
 using Prism.Navigation;
 using System.Diagnostics;
 using Everlore.Core.Common;
+using JetBrains.Annotations;
 
 namespace Everlore.Host.ViewModels;
 
+[UsedImplicitly]
 public class SettingsViewModel : ViewModelBase
 {
     private readonly IRegionManager _regionManager;

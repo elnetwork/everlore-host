@@ -2,10 +2,11 @@ using System.Diagnostics;
 using Everlore.Core.Common;
 using Prism.Commands;
 using Prism.Navigation.Regions;
-using Everlore.Host.Views;
+using JetBrains.Annotations;
 
 namespace Everlore.Host.ViewModels;
 
+[UsedImplicitly]
 public class SettingsSubViewModel : ViewModelBase
 {
     private readonly IRegionManager _regionManager;
@@ -46,7 +47,7 @@ public class SettingsSubViewModel : ViewModelBase
             MessageNumber = msgNum.ToString();
     }
 
-    public override bool OnNavigatingTo(NavigationContext navigationContext)
+    protected override bool OnNavigatingTo(NavigationContext navigationContext)
     {
         Debug.WriteLine("OnNavigatingTo");
 

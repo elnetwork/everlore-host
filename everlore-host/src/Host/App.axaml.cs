@@ -15,7 +15,7 @@ using Everlore.Host.Views;
 
 namespace Everlore.Host;
 
-public partial class App : PrismApplication
+public class App : PrismApplication
 {
     public override void Initialize()
     {

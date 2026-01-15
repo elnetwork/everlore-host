@@ -20,7 +20,6 @@
       <Folder Include="Features\AddItem\Cqrs\Handlers\" />
       <Folder Include="Features\AddItem\Cqrs\Validators\" />
       <Folder Include="Features\AddItem\ViewModels\Commands\" />
-      <Folder Include="Features\AddItem\Views\" />
       <Folder Include="Models\" />
       <Folder Include="Services\" />
       <Folder Include="Shell\ViewModels\Commands\" />
@@ -41,6 +40,10 @@
       </Compile>
       <Compile Update="Shell\Views\SidebarView.axaml.cs">
         <DependentUpon>SidebarView.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Features\AddItem\Views\AddItemView.axaml.cs">
+        <DependentUpon>AddItemView.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
     </ItemGroup>
