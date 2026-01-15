@@ -22,24 +22,24 @@
       <Folder Include="Features\AddItem\ViewModels\Commands\" />
       <Folder Include="Models\" />
       <Folder Include="Services\" />
-      <Folder Include="Shell\ViewModels\Commands\" />
+      <Folder Include="Shell\Commands\" />
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="Shell\HeroMainView.axaml.cs">
-        <DependentUpon>HeroMainView.axaml</DependentUpon>
-        <SubType>Code</SubType>
-      </Compile>
-      <Compile Update="Shell\CommandBarView.axaml.cs">
+      <Compile Update="Shell\Views\CommandBarView.axaml.cs">
         <DependentUpon>CommandBarView.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
-      <Compile Update="Shell\MenuBarView.axaml.cs">
+      <Compile Update="Shell\Views\HeroMainView.axaml.cs">
+        <DependentUpon>HeroMainView.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Shell\Views\MenuBarView.axaml.cs">
         <DependentUpon>MenuBarView.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
-      <Compile Update="Shell\SidebarView.axaml.cs">
-        <DependentUpon>SideBarView.axaml</DependentUpon>
+      <Compile Update="Shell\Views\SidebarView.axaml.cs">
+        <DependentUpon>SidebarView.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
     </ItemGroup>

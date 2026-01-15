@@ -1,6 +1,6 @@
 ﻿using Avalonia.Controls;
 
-namespace Everlore.Hero.Shell;
+namespace Everlore.Hero.Shell.Views;
 
 public partial class HeroMainView : UserControl
 {

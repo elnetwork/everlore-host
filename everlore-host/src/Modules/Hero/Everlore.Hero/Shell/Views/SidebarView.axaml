@@ -1,14 +1,14 @@
-﻿<UserControl x:Class="Everlore.Hero.Shell.SidebarView"
+﻿<UserControl x:Class="Everlore.Hero.Shell.Views.SidebarView"
              xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:shell="using:Everlore.Hero.Shell"
+             xmlns:views="using:Everlore.Hero.Shell.Views"
              xmlns:icons="using:Everlore.Core.Themes"
              xmlns:prism="http://prismlibrary.com/"
              xmlns:vm="using:Everlore.Hero.Shell.ViewModels"
              prism:ViewModelLocator.AutoWireViewModel="True"
              x:DataType="vm:CommandBarViewModel"
              x:CompileBindings="True"
-             Width="{Binding $parent[shell:HeroMainView].((vm:HeroMainViewModel)DataContext).FlyoutWidth, FallbackValue=200}">
+             Width="{Binding $parent[views:HeroMainView].((vm:HeroMainViewModel)DataContext).FlyoutWidth, FallbackValue=200}">
 
     <StackPanel Orientation="Vertical">
         <StackPanel Orientation="Vertical">

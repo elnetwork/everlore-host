@@ -1,14 +1,14 @@
-﻿<UserControl x:Class="Everlore.Hero.Shell.MenuBarView"
+﻿<UserControl x:Class="Everlore.Hero.Shell.Views.MenuBarView"
              xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:icons="using:Everlore.Core.Themes"
-             xmlns:shell="using:Everlore.Hero.Shell"
+             xmlns:views="using:Everlore.Hero.Shell.Views"
              xmlns:vm="using:Everlore.Hero.Shell.ViewModels"
              x:DataType="vm:MenuBarViewModel"
              x:CompileBindings="True">
     
     <StackPanel Orientation="Horizontal">
-        <Button Command="{Binding $parent[shell:HeroMainView].((vm:HeroMainViewModel)DataContext).FlyoutSidebarCommand, FallbackValue={x:Null}}"
+        <Button Command="{Binding $parent[views:HeroMainView].((vm:HeroMainViewModel)DataContext).FlyoutSidebarCommand, FallbackValue={x:Null}}"
                 ToolTip.Tip="Expand/Collapse"
                 Height="25">
             <StackPanel Orientation="Horizontal">

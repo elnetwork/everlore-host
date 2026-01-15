@@ -1,19 +1,19 @@
-﻿<UserControl x:Class="Everlore.Hero.Shell.HeroMainView"
+﻿<UserControl x:Class="Everlore.Hero.Shell.Views.HeroMainView"
              x:Name="ViewRoot"
              xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"
-             xmlns:shell="using:Everlore.Hero.Shell"
+             xmlns:views="using:Everlore.Hero.Shell.Views"
              xmlns:common="using:Everlore.Hero.Common"
              prism:ViewModelLocator.AutoWireViewModel="True"
              Background="#141414">
     
     <DockPanel>
         <!-- Menu bar -->
-        <shell:MenuBarView DockPanel.Dock="Top" />
+        <views:MenuBarView DockPanel.Dock="Top" />
         
         <!-- Command bar -->
-        <shell:CommandBarView HorizontalContentAlignment="Stretch" DockPanel.Dock="Top" />
+        <views:CommandBarView HorizontalContentAlignment="Stretch" DockPanel.Dock="Top" />
         
         <Grid ColumnDefinitions="Auto,*" RowDefinitions="*,Auto">
             <!-- Side bar -->
@@ -21,7 +21,7 @@
 
                 <!-- The SidebarView is not using a region on purpose, so it shows in designer mode
                 <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.SidebarRegion}" /> -->
-                <shell:SidebarView />
+                <views:SidebarView />
             </Panel>
 
             <!-- Workspace -->
