@@ -3,13 +3,27 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"
              xmlns:vm="using:Everlore.Hero.Shell.ViewModels"
+             xmlns:icons="using:Everlore.Core.Themes"
              prism:ViewModelLocator.AutoWireViewModel="True"
              x:DataType="vm:CommandBarViewModel"
              x:CompileBindings="True">
     
     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-        <Button Content="Add Item" />
-        <Button Content="Delete" />
-        <Button Content="Archive" />
+        <Button>
+            <StackPanel Orientation="Horizontal">
+                <PathIcon Data="{StaticResource {x:Static icons:Icons.AddItem}}"
+                          Width="16"
+                          Height="16"/>
+                <TextBlock Text="Add Item" />
+            </StackPanel>
+        </Button>
+        <Button>
+            <StackPanel Orientation="Horizontal">
+                <PathIcon Data="{StaticResource {x:Static icons:Icons.Delete}}"
+                          Width="16"
+                          Height="16"/>
+                <TextBlock Text="Delete" />
+            </StackPanel>
+        </Button>
     </StackPanel>
 </UserControl>

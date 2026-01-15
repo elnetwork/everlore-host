@@ -23,6 +23,7 @@
     <!-- Dock the Settings button to the bottom -->
     <Button Command="{Binding SettingsCommand}"
             ToolTip.Tip="Settings"
+            Background="Transparent"
             DockPanel.Dock="Bottom">
       <Panel HorizontalAlignment="Stretch">
         <PathIcon Data="{StaticResource {x:Static icons:Icons.Settings}}"
@@ -43,7 +44,8 @@
         <ItemsControl.ItemTemplate>
           <DataTemplate>
             <Button Command="{Binding NavigateCommand}"
-                    ToolTip.Tip="{Binding Title}">
+                    ToolTip.Tip="{Binding Title}"
+                    Background="Transparent">
               <Svg Path="{Binding IconFilePath}"
                    Width="24"
                    Height="24"/>

@@ -9,12 +9,9 @@
     
     <StackPanel Orientation="Horizontal">
         <Button Command="{Binding $parent[views:HeroMainView].((vm:HeroMainViewModel)DataContext).FlyoutSidebarCommand, FallbackValue={x:Null}}"
-                ToolTip.Tip="Expand/Collapse"
-                Height="25">
-            <StackPanel Orientation="Horizontal">
-                <PathIcon Data="{StaticResource {x:Static icons:Icons.Hamburger}}" />
-                <TextBlock Text="" />
-            </StackPanel>
+                Background="Transparent"
+                Height="24">
+            <PathIcon Data="{StaticResource {x:Static icons:Icons.Hamburger}}" />
         </Button>
         
         <Menu>

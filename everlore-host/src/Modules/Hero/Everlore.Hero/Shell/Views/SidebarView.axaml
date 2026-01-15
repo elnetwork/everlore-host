@@ -14,19 +14,25 @@
         <StackPanel Orientation="Vertical">
             <Button>
                 <StackPanel Orientation="Horizontal">
-                    <PathIcon Data="{StaticResource {x:Static icons:Icons.Home}}" />
+                    <PathIcon Data="{StaticResource {x:Static icons:Icons.Main}}"
+                              Width="16"
+                              Height="16"/>
                     <TextBlock Text="Main" />
                 </StackPanel>
             </Button>
             <Button>
                 <StackPanel Orientation="Horizontal">
-                    <PathIcon Data="{StaticResource {x:Static icons:Icons.Home}}" />
+                    <PathIcon Data="{StaticResource {x:Static icons:Icons.Bookmark}}"
+                              Width="16"
+                              Height="16" />
                     <TextBlock Text="Bookmarks" />
                 </StackPanel>
             </Button>
             <Button>
                 <StackPanel Orientation="Horizontal">
-                    <PathIcon Data="{StaticResource {x:Static icons:Icons.Home}}" />
+                    <PathIcon Data="{StaticResource {x:Static icons:Icons.Delete}}"
+                              Width="16"
+                              Height="16" />
                     <TextBlock Text="Deleted items" />
                 </StackPanel>
             </Button>
@@ -36,19 +42,25 @@
             <StackPanel Orientation="Vertical">
                 <Button>
                     <StackPanel Orientation="Horizontal">
-                        <PathIcon Data="{StaticResource {x:Static icons:Icons.Home}}" />
+                        <PathIcon Data="{StaticResource {x:Static icons:Icons.Tag}}"
+                                  Width="16"
+                                  Height="16" />
                         <TextBlock Text="Tag 1" />
                     </StackPanel>
                 </Button>
                 <Button>
                     <StackPanel Orientation="Horizontal">
-                        <PathIcon Data="{StaticResource {x:Static icons:Icons.Home}}" />
+                        <PathIcon Data="{StaticResource {x:Static icons:Icons.Tag}}"
+                                  Width="16"
+                                  Height="16" />
                         <TextBlock Text="Tag 2" />
                     </StackPanel>
                 </Button>
                 <Button>
                     <StackPanel Orientation="Horizontal">
-                        <PathIcon Data="{StaticResource {x:Static icons:Icons.Home}}" />
+                        <PathIcon Data="{StaticResource {x:Static icons:Icons.Tag}}"
+                                  Width="16"
+                                  Height="16" />
                         <TextBlock Text="Tag 3" />
                     </StackPanel>
                 </Button>
