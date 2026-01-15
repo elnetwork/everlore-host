@@ -15,8 +15,6 @@ namespace Everlore.Host.ViewModels;
 /// </summary>
 public class SidebarViewModel : ViewModelBase
 {
-    private const int Collapsed = 40;
-    private const int Expanded = 200;
     private readonly IRegionManager _regionManager;
 
     public SidebarViewModel(IModuleCatalogService catalogService, IModuleManager moduleManager, IRegionManager regionManager)
@@ -24,17 +22,16 @@ public class SidebarViewModel : ViewModelBase
         _regionManager = regionManager;
 
         Title = "Navigation";
-        FlyoutWidth = Expanded;
 
         foreach (var info in catalogService.Modules)
         {
             var item = new NavigationItemViewModel
             {
-                Title = info.Title,
-                ModuleName = info.ModuleName,
-                NavigationPath = info.NavigationPath,
-                Icon = StreamGeometry.Parse(info.IconData),
-                Order = info.Order,
+                Title           = info.Title,
+                ModuleName      = info.ModuleName,
+                NavigationPath  = info.NavigationPath,
+                Icon            = StreamGeometry.Parse(info.IconData),
+                Order           = info.Order,
                 NavigateCommand = new DelegateCommand<NavigationItemViewModel>(_ =>
                 {
                     moduleManager.LoadModule(info.ModuleName);
@@ -51,14 +48,6 @@ public class SidebarViewModel : ViewModelBase
     }
 
     public ObservableCollection<NavigationItemViewModel> ModuleItems { get; } = [];
-    public int FlyoutWidth { get; set => SetProperty(ref field, value); }
 
-    public DelegateCommand FlyoutSidebarCommand => new(() =>
-    {
-        var isExpanded = FlyoutWidth == Expanded;
-        FlyoutWidth = isExpanded ? Collapsed : Expanded;
-    });
-
-    public DelegateCommand SettingsCommand => new(() =>
-        _regionManager.RequestNavigate(RegionName.Content, nameof(SettingsView)));
+    public DelegateCommand SettingsCommand => new(() => _regionManager.RequestNavigate(RegionName.Content, nameof(SettingsView)));
 }

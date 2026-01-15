@@ -7,7 +7,7 @@
              xmlns:prism="http://prismlibrary.com/"
              prism:ViewModelLocator.AutoWireViewModel="True"
              xmlns:icons="using:Everlore.Core.Themes"
-             Width="{Binding FlyoutWidth}">
+             Width="40">
 
   <UserControl.Styles>
     <Style Selector="Button">
@@ -20,24 +20,10 @@
   </UserControl.Styles>
 
   <DockPanel>
-
-    <!-- Dock the hamburger menu button to the top with no text -->
-    <Button DockPanel.Dock="Top"
-            Command="{Binding FlyoutSidebarCommand}"
-            ToolTip.Tip="Expand/Collapse"
-            Height="25">
-      <StackPanel Orientation="Horizontal">
-        <PathIcon Data="{StaticResource {x:Static icons:Icons.Hamburger}}" />
-        <TextBlock Text="" />
-      </StackPanel>
-    </Button>
-
     <!-- Dock the Settings button to the bottom -->
-    <Button DockPanel.Dock="Bottom" Command="{Binding SettingsCommand}" ToolTip.Tip="Settings">
-      <StackPanel Orientation="Horizontal">
-        <PathIcon Data="{StaticResource {x:Static icons:Icons.Settings}}" />
-        <TextBlock Text="Navigation Sample" />
-      </StackPanel>
+    <Button Command="{Binding SettingsCommand}" ToolTip.Tip="Settings"
+            DockPanel.Dock="Bottom">
+      <PathIcon Data="{StaticResource {x:Static icons:Icons.Settings}}" />
     </Button>
 
     <ScrollViewer>
@@ -52,10 +38,7 @@
           <DataTemplate>
             <Button Command="{Binding NavigateCommand}"
                     ToolTip.Tip="{Binding Title}">
-              <StackPanel Orientation="Horizontal">
-                <PathIcon Data="{Binding Icon}" />
-                <TextBlock Text="{Binding Title}" />
-              </StackPanel>
+              <PathIcon Data="{Binding Icon}" />
             </Button>
           </DataTemplate>
         </ItemsControl.ItemTemplate>
