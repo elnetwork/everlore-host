@@ -8,22 +8,24 @@
              x:DataType="vm:CommandBarViewModel"
              x:CompileBindings="True">
     
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-        <Button>
-            <StackPanel Orientation="Horizontal">
-                <PathIcon Data="{StaticResource {x:Static icons:Icons.AddItem}}"
-                          Width="16"
-                          Height="16"/>
-                <TextBlock Text="Add Item" />
-            </StackPanel>
-        </Button>
-        <Button>
-            <StackPanel Orientation="Horizontal">
-                <PathIcon Data="{StaticResource {x:Static icons:Icons.Delete}}"
-                          Width="16"
-                          Height="16"/>
-                <TextBlock Text="Delete" />
-            </StackPanel>
-        </Button>
-    </StackPanel>
+    <Panel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+            <Button>
+                <StackPanel Orientation="Horizontal">
+                    <PathIcon Data="{StaticResource {x:Static icons:Icons.AddItem}}"
+                              Width="16"
+                              Height="16"/>
+                    <TextBlock Text="Add Item" />
+                </StackPanel>
+            </Button>
+            <Button>
+                <StackPanel Orientation="Horizontal">
+                    <PathIcon Data="{StaticResource {x:Static icons:Icons.Delete}}"
+                              Width="16"
+                              Height="16"/>
+                    <TextBlock Text="Delete" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+    </Panel>
 </UserControl>

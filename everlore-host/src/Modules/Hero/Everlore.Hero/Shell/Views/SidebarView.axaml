@@ -9,30 +9,38 @@
              x:DataType="vm:CommandBarViewModel"
              x:CompileBindings="True"
              Width="{Binding $parent[views:HeroMainView].((vm:HeroMainViewModel)DataContext).FlyoutWidth, FallbackValue=200}">
+    
+    <UserControl.Styles>
+        <Style Selector="Button">
+            <Setter Property="Padding" Value="12 8 8 8" />
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+        <Style Selector="TextBlock">
+            <Setter Property="Margin" Value="16 0 0 0"></Setter>
+        </Style>
+        <Style Selector="PathIcon">
+            <Setter Property="Width" Value="16"></Setter>
+            <Setter Property="Height" Value="16"></Setter>
+        </Style>
+    </UserControl.Styles>
 
     <StackPanel Orientation="Vertical">
         <StackPanel Orientation="Vertical">
             <Button>
                 <StackPanel Orientation="Horizontal">
-                    <PathIcon Data="{StaticResource {x:Static icons:Icons.Main}}"
-                              Width="16"
-                              Height="16"/>
+                    <PathIcon Data="{StaticResource {x:Static icons:Icons.Main}}" />
                     <TextBlock Text="Main" />
                 </StackPanel>
             </Button>
             <Button>
                 <StackPanel Orientation="Horizontal">
-                    <PathIcon Data="{StaticResource {x:Static icons:Icons.Bookmark}}"
-                              Width="16"
-                              Height="16" />
+                    <PathIcon Data="{StaticResource {x:Static icons:Icons.Bookmark}}" />
                     <TextBlock Text="Bookmarks" />
                 </StackPanel>
             </Button>
             <Button>
                 <StackPanel Orientation="Horizontal">
-                    <PathIcon Data="{StaticResource {x:Static icons:Icons.Delete}}"
-                              Width="16"
-                              Height="16" />
+                    <PathIcon Data="{StaticResource {x:Static icons:Icons.Delete}}" />
                     <TextBlock Text="Deleted items" />
                 </StackPanel>
             </Button>
@@ -42,25 +50,19 @@
             <StackPanel Orientation="Vertical">
                 <Button>
                     <StackPanel Orientation="Horizontal">
-                        <PathIcon Data="{StaticResource {x:Static icons:Icons.Tag}}"
-                                  Width="16"
-                                  Height="16" />
+                        <PathIcon Data="{StaticResource {x:Static icons:Icons.Tag}}" />
                         <TextBlock Text="Tag 1" />
                     </StackPanel>
                 </Button>
                 <Button>
                     <StackPanel Orientation="Horizontal">
-                        <PathIcon Data="{StaticResource {x:Static icons:Icons.Tag}}"
-                                  Width="16"
-                                  Height="16" />
+                        <PathIcon Data="{StaticResource {x:Static icons:Icons.Tag}}" />
                         <TextBlock Text="Tag 2" />
                     </StackPanel>
                 </Button>
                 <Button>
                     <StackPanel Orientation="Horizontal">
-                        <PathIcon Data="{StaticResource {x:Static icons:Icons.Tag}}"
-                                  Width="16"
-                                  Height="16" />
+                        <PathIcon Data="{StaticResource {x:Static icons:Icons.Tag}}" />
                         <TextBlock Text="Tag 3" />
                     </StackPanel>
                 </Button>

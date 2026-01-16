@@ -13,11 +13,13 @@
         <views:MenuBarView DockPanel.Dock="Top" />
         
         <!-- Command bar -->
-        <views:CommandBarView HorizontalContentAlignment="Stretch" DockPanel.Dock="Top" />
+        <Panel DockPanel.Dock="Top" Background="#26282B" Margin="3">
+            <views:CommandBarView HorizontalContentAlignment="Stretch" />
+        </Panel>
         
         <Grid ColumnDefinitions="Auto,*" RowDefinitions="*,Auto">
             <!-- Side bar -->
-            <Panel Grid.Row="0" Grid.Column="0" Background="#26282B">
+            <Panel Grid.Row="0" Grid.Column="0">
 
                 <!-- The SidebarView is not using a region on purpose, so it shows in designer mode
                 <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.SidebarRegion}" /> -->
