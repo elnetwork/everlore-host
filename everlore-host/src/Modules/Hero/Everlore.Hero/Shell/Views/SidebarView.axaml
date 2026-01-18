@@ -6,7 +6,7 @@
              xmlns:prism="http://prismlibrary.com/"
              xmlns:vm="using:Everlore.Hero.Shell.ViewModels"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             x:DataType="vm:CommandBarViewModel"
+             x:DataType="vm:HeroRibbonViewModel"
              x:CompileBindings="True"
              Width="{Binding $parent[views:HeroMainView].((vm:HeroMainViewModel)DataContext).FlyoutWidth, FallbackValue=200}">
     

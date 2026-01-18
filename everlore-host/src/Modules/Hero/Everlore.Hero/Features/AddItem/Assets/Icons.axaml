@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    x:Class="Everlore.Hero.Features.AddItem.Assets.Icons"
+                    xmlns:icons="using:Everlore.Hero.Features.AddItem.Assets">
+
+    <StreamGeometry x:Key="{x:Static icons:Icons.AddHero}">M 14 7 V 8 H 8 v 6 H 7 V 8 H 1 V 7 H 7 V 1 h 1 v 6 z</StreamGeometry>
+    <StreamGeometry x:Key="{x:Static icons:Icons.AddSuperHero}">M 14 7 V 8 H 8 v 6 H 7 V 8 H 1 V 7 H 7 V 1 h 1 v 6 z</StreamGeometry>
+</ResourceDictionary>

@@ -24,9 +24,9 @@ public class HeroModule : IModule
         containerRegistry.RegisterForNavigation<HeroMainView>(ModuleNavigationPath.Hero);
 
         // View-models.
-        containerRegistry.RegisterSingleton<CommandBarViewModel>();
+        containerRegistry.RegisterSingleton<HeroRibbonViewModel>();
         containerRegistry.RegisterSingleton<HeroMainViewModel>();
-        containerRegistry.RegisterSingleton<MenuBarViewModel>();
+        containerRegistry.RegisterSingleton<HeroMenuBarViewModel>();
         containerRegistry.RegisterSingleton<SideBarViewModel>();
     }
 }

@@ -10,11 +10,11 @@
     
     <DockPanel>
         <!-- Menu bar -->
-        <views:MenuBarView DockPanel.Dock="Top" />
+        <views:HeroMenuBarView DockPanel.Dock="Top" />
         
         <!-- Command bar -->
         <Panel DockPanel.Dock="Top" Background="#26282B" Margin="5">
-            <views:CommandBarView HorizontalContentAlignment="Stretch" />
+            <views:HeroRibbonView HorizontalContentAlignment="Stretch" />
         </Panel>
         
         <Grid ColumnDefinitions="Auto,*" RowDefinitions="*,Auto">

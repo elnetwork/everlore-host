@@ -16,17 +16,17 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Folder Include="Features\AddItem\Assets\" />
       <Folder Include="Features\AddItem\Cqrs\Dtos\" />
       <Folder Include="Features\AddItem\Cqrs\Handlers\" />
       <Folder Include="Features\AddItem\Cqrs\Validators\" />
-      <Folder Include="Features\AddItem\ViewModels\Commands\" />
       <Folder Include="Models\" />
       <Folder Include="Services\" />
       <Folder Include="Shell\ViewModels\Commands\" />
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="Shell\Views\CommandBarView.axaml.cs">
+      <Compile Update="Shell\Views\HeroRibbonView.axaml.cs">
         <DependentUpon>CommandBarView.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
@@ -34,7 +34,7 @@
         <DependentUpon>HeroMainView.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
-      <Compile Update="Shell\Views\MenuBarView.axaml.cs">
+      <Compile Update="Shell\Views\HeroMenuBarView.axaml.cs">
         <DependentUpon>MenuBarView.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
@@ -45,6 +45,9 @@
       <Compile Update="Features\AddItem\Views\AddItemView.axaml.cs">
         <DependentUpon>AddItemView.axaml</DependentUpon>
         <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Features\AddItem\Assets\Icons.axaml.cs">
+        <DependentUpon>Icons.axaml</DependentUpon>
       </Compile>
     </ItemGroup>
 
