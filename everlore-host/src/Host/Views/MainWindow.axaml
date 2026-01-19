@@ -15,8 +15,8 @@
 
   <Grid ColumnDefinitions="Auto,*" RowDefinitions="36,40,*,Auto">
 
-    <!-- Sidebar -->
-    <views:SidebarView Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" />
+    <!-- Module bar -->
+    <views:ModuleBarView Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" />
 
     <!-- Status bar -->
     <Panel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Background="#26282B">

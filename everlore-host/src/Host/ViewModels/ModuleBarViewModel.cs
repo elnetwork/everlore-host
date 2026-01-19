@@ -13,11 +13,11 @@ namespace Everlore.Host.ViewModels;
 /// <summary>
 /// View-model corresponding to the left sidebar where the module buttons are located.
 /// </summary>
-public class SidebarViewModel : ViewModelBase
+public class ModuleBarViewModel : ViewModelBase
 {
     private readonly IRegionManager _regionManager;
 
-    public SidebarViewModel(IModuleCatalogService catalogService, IModuleManager moduleManager, IRegionManager regionManager)
+    public ModuleBarViewModel(IModuleCatalogService catalogService, IModuleManager moduleManager, IRegionManager regionManager)
     {
         _regionManager = regionManager;
 

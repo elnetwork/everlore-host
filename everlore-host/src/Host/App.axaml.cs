@@ -39,7 +39,7 @@ public class App : PrismApplication
         containerRegistry.RegisterForNavigation<SettingsSubView>();
 
         // View-models.
-        containerRegistry.Register<SidebarViewModel>();
+        containerRegistry.Register<ModuleBarViewModel>();
 
         // Dialogs, etc.
     }
