@@ -30,7 +30,7 @@
         <DependentUpon>CommandBarView.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
-      <Compile Update="Shell\Views\HeroMainView.axaml.cs">
+      <Compile Update="Shell\Views\HeroWorkspaceView.axaml.cs">
         <DependentUpon>HeroMainView.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>

@@ -9,8 +9,8 @@ namespace Everlore.Hero;
 /// Module for creating player characters.
 /// </summary>
 [UsedImplicitly]
-[Module(ModuleName = "HeroModule", OnDemand = true)]
-public class HeroModule : IModule
+[Module(ModuleName = "Hero", OnDemand = true)]
+public class Hero : IModule
 {
     public void OnInitialized(IContainerProvider containerProvider)
     {
@@ -18,13 +18,17 @@ public class HeroModule : IModule
         
         regionManager.RegisterViewWithRegion(RegionName.MenuBar, typeof(HeroMenuBarView));
         regionManager.RegisterViewWithRegion(RegionName.Ribbon, typeof(HeroRibbonView));
-        regionManager.RegisterViewWithRegion(RegionName.Workspace, typeof(HeroMainView));
+        regionManager.RegisterViewWithRegion(RegionName.Workspace, typeof(HeroWorkspaceView));
+        
+        regionManager.RequestNavigate(RegionName.MenuBar, nameof(HeroMenuBarView));
+        regionManager.RequestNavigate(RegionName.Ribbon, nameof(HeroRibbonView));
+        regionManager.RequestNavigate(RegionName.Workspace, nameof(HeroWorkspaceView));
     }
     
     public void RegisterTypes(IContainerRegistry containerRegistry)
     {
         // Navigation.
-        containerRegistry.RegisterForNavigation<HeroMainView>(ModuleNavigationPath.Hero);
+        containerRegistry.RegisterForNavigation<HeroWorkspaceView>(ModuleNavigationPath.Hero);
 
         // View-models.
         containerRegistry.RegisterSingleton<HeroRibbonViewModel>();

@@ -6,7 +6,7 @@ namespace Everlore.Bestiary;
 /// <summary>
 /// Module for creating non-player characters and creatures.
 /// </summary>
-[Module(ModuleName = "BestiaryModule", OnDemand = true)]
+[Module(ModuleName = "Bestiary", OnDemand = true)]
 public class BestiaryModule : IModule
 {
     public void OnInitialized(IContainerProvider containerProvider)

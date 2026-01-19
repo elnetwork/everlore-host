@@ -7,11 +7,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Converters\" />
-      <Folder Include="Enumerations\" />
-    </ItemGroup>
-
-    <ItemGroup>
       <PackageReference Include="JetBrains.Annotations" Version="2025.2.4" />
       <PackageReference Include="Prism.Avalonia" Version="9.0.537.11300-pre" />
     </ItemGroup>

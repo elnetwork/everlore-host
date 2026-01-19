@@ -49,7 +49,7 @@ public class App : PrismApplication
         base.ConfigureModuleCatalog(moduleCatalog);
 
         // Register all modules.
-        moduleCatalog.AddModule<HeroModule>(InitializationMode.OnDemand);
+        moduleCatalog.AddModule<Hero.Hero>(InitializationMode.OnDemand);
         moduleCatalog.AddModule<BestiaryModule>(InitializationMode.OnDemand);
     }
 
