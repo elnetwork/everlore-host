@@ -19,7 +19,6 @@
       <Folder Include="Features\AddItem\Assets\" />
       <Folder Include="Models\" />
       <Folder Include="Services\" />
-      <Folder Include="Shell\ViewModels\Commands\" />
     </ItemGroup>
 
     <ItemGroup>

@@ -1,14 +1,13 @@
 ﻿<UserControl x:Class="Everlore.Hero.Shell.Views.HeroMenuBarView"
+             x:DataType="vm:HeroMenuBarViewModel"
+             x:CompileBindings="True"
              xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:icons="using:Everlore.Core.Themes"
-             xmlns:views="using:Everlore.Hero.Shell.Views"
              xmlns:vm="using:Everlore.Hero.Shell.ViewModels"
-             x:DataType="vm:HeroMenuBarViewModel"
-             x:CompileBindings="True">
+             xmlns:icons="using:Everlore.Core.Themes">
     
     <StackPanel Orientation="Horizontal">
-        <Button Command="{Binding $parent[views:HeroWorkspaceView].((vm:HeroMainViewModel)DataContext).FlyoutSidebarCommand, FallbackValue={x:Null}}"
+        <Button Command="{Binding FlyoutSidebarCommand}"
                 Background="Transparent"
                 Height="24">
             <PathIcon Data="{StaticResource {x:Static icons:Icons.Hamburger}}" />

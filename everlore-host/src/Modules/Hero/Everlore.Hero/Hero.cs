@@ -32,7 +32,7 @@ public class Hero : IModule
 
         // View-models.
         containerRegistry.RegisterSingleton<HeroRibbonViewModel>();
-        containerRegistry.RegisterSingleton<HeroMainViewModel>();
+        containerRegistry.RegisterSingleton<HeroWorkspaceViewModel>();
         containerRegistry.RegisterSingleton<HeroMenuBarViewModel>();
         containerRegistry.RegisterSingleton<SideBarViewModel>();
     }

@@ -1,6 +1,9 @@
-﻿namespace Everlore.Hero.Shell.ViewModels;
+﻿using Everlore.Hero.Features.AddItem.Events;
 
-public class HeroMenuBarViewModel
+namespace Everlore.Hero.Shell.ViewModels;
+
+public class HeroMenuBarViewModel(IEventAggregator eventAggregator)
 {
-    
+    public DelegateCommand FlyoutSidebarCommand => new(() =>
+        eventAggregator.GetEvent<ExpandCollapseSidebarEvent>().Publish());
 }
