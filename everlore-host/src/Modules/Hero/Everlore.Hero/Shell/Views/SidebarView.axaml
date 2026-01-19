@@ -24,52 +24,54 @@
         </Style>
     </UserControl.Styles>
 
-    <Border BorderThickness="0 0 1 0"
-            BorderBrush="DarkSlateGray">
-        <StackPanel Orientation="Vertical">
+    <Panel Background="#26282B">
+        <Border BorderThickness="0 0 1 0"
+                    BorderBrush="DarkSlateGray">
             <StackPanel Orientation="Vertical">
-                <Button>
-                    <StackPanel Orientation="Horizontal">
-                        <PathIcon Data="{StaticResource {x:Static icons:Icons.Main}}" />
-                        <TextBlock Text="Main" />
-                    </StackPanel>
-                </Button>
-                <Button>
-                    <StackPanel Orientation="Horizontal">
-                        <PathIcon Data="{StaticResource {x:Static icons:Icons.Bookmark}}" />
-                        <TextBlock Text="Bookmarks" />
-                    </StackPanel>
-                </Button>
-                <Button>
-                    <StackPanel Orientation="Horizontal">
-                        <PathIcon Data="{StaticResource {x:Static icons:Icons.Delete}}" />
-                        <TextBlock Text="Deleted items" />
-                    </StackPanel>
-                </Button>
-            </StackPanel>
-            <Separator />
-            <ScrollViewer>
                 <StackPanel Orientation="Vertical">
                     <Button>
                         <StackPanel Orientation="Horizontal">
-                            <PathIcon Data="{StaticResource {x:Static icons:Icons.Tag}}" />
-                            <TextBlock Text="Tag 1" />
+                            <PathIcon Data="{StaticResource {x:Static icons:Icons.Main}}" />
+                            <TextBlock Text="Main" />
                         </StackPanel>
                     </Button>
                     <Button>
                         <StackPanel Orientation="Horizontal">
-                            <PathIcon Data="{StaticResource {x:Static icons:Icons.Tag}}" />
-                            <TextBlock Text="Tag 2" />
+                            <PathIcon Data="{StaticResource {x:Static icons:Icons.Bookmark}}" />
+                            <TextBlock Text="Bookmarks" />
                         </StackPanel>
                     </Button>
                     <Button>
                         <StackPanel Orientation="Horizontal">
-                            <PathIcon Data="{StaticResource {x:Static icons:Icons.Tag}}" />
-                            <TextBlock Text="Tag 3" />
+                            <PathIcon Data="{StaticResource {x:Static icons:Icons.Delete}}" />
+                            <TextBlock Text="Deleted items" />
                         </StackPanel>
                     </Button>
                 </StackPanel>
-            </ScrollViewer>
-        </StackPanel>
-    </Border>
+                <Separator />
+                <ScrollViewer>
+                    <StackPanel Orientation="Vertical">
+                        <Button>
+                            <StackPanel Orientation="Horizontal">
+                                <PathIcon Data="{StaticResource {x:Static icons:Icons.Tag}}" />
+                                <TextBlock Text="Tag 1" />
+                            </StackPanel>
+                        </Button>
+                        <Button>
+                            <StackPanel Orientation="Horizontal">
+                                <PathIcon Data="{StaticResource {x:Static icons:Icons.Tag}}" />
+                                <TextBlock Text="Tag 2" />
+                            </StackPanel>
+                        </Button>
+                        <Button>
+                            <StackPanel Orientation="Horizontal">
+                                <PathIcon Data="{StaticResource {x:Static icons:Icons.Tag}}" />
+                                <TextBlock Text="Tag 3" />
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </ScrollViewer>
+            </StackPanel>
+        </Border>
+    </Panel>
 </UserControl>

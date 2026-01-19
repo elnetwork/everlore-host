@@ -1,12 +1,14 @@
 ﻿using System.Collections.ObjectModel;
 using Everlore.Core.Common;
 using Everlore.Core.Contracts;
+using Everlore.Hero.Common;
 
 namespace Everlore.Hero.Shell.ViewModels;
 
 public class HeroRibbonViewModel(IEnumerable<IRibbonContributor> allContributors) : ViewModelBase, IRibbonRegistry
 {
     private bool _isInitialized;
+    
     private ObservableCollection<RibbonItemBase> Items { get; } = [];
 
     public override void OnNavigatedTo(NavigationContext navigationContext)
@@ -14,7 +16,7 @@ public class HeroRibbonViewModel(IEnumerable<IRibbonContributor> allContributors
         if (_isInitialized) return;
         
         var moduleContributors = allContributors
-            .Where(c => c.ModuleName == "Hero")
+            .Where(c => c.ModuleName == Module.Name)
             .ToList();
 
         foreach (var contributor in moduleContributors)

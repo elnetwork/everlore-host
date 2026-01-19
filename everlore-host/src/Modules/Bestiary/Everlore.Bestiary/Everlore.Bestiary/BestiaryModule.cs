@@ -12,7 +12,7 @@ public class BestiaryModule : IModule
     public void OnInitialized(IContainerProvider containerProvider)
     {
         var regionManager = containerProvider.Resolve<IRegionManager>();
-        regionManager.RegisterViewWithRegion(RegionName.Content, typeof(BestiaryMainView));
+        regionManager.RegisterViewWithRegion(RegionName.Workspace, typeof(BestiaryMainView));
     }
     
     public void RegisterTypes(IContainerRegistry containerRegistry) =>

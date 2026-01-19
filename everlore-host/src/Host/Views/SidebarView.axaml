@@ -19,7 +19,7 @@
     </Style>
   </UserControl.Styles>
 
-  <DockPanel>
+  <DockPanel Background="#26282B">
     <!-- Dock the Settings button to the bottom -->
     <Button Command="{Binding SettingsCommand}"
             ToolTip.Tip="Settings"
@@ -44,7 +44,7 @@
         <ItemsControl.ItemTemplate>
           <DataTemplate>
             <Button Command="{Binding NavigateCommand}"
-                    ToolTip.Tip="{Binding Title}"
+                    ToolTip.Tip="{Binding Name}"
                     Background="Transparent">
               <Svg Path="{Binding IconFilePath}"
                    Width="24"

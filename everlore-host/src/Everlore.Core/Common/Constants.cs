@@ -6,9 +6,9 @@ namespace Everlore.Core.Common;
 /// </summary>
 public static class RegionName
 {
-    public static readonly string Content = "ContentRegion";
-    public static readonly string Footer = "FooterRegion";
-    public static readonly string Sidebar = "SidebarRegion";
+    public static readonly string MenuBar   = "MenuBarRegion";
+    public static readonly string Ribbon    = "RibbonRegion";
+    public static readonly string Workspace = "WorkspaceRegion";
 }
 
 /// <summary>
@@ -17,6 +17,6 @@ public static class RegionName
 /// </summary>
 public static class ModuleNavigationPath
 {
-    public static readonly string Hero = "HeroNavigationPath";
+    public static readonly string Hero     = "HeroNavigationPath";
     public static readonly string Bestiary = "BestiaryNavigationPath";
 }

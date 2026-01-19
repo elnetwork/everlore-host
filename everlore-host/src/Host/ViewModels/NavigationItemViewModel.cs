@@ -8,9 +8,7 @@ namespace Everlore.Host.ViewModels;
 /// </summary>
 public class NavigationItemViewModel
 {
-    public string Title { get; init; } = string.Empty;
-    public string ModuleName { get; init; } = string.Empty;
-    public string NavigationPath { get; init; } = string.Empty;
+    public string Name { get; init; } = string.Empty;
     public string IconFilePath { get; init; } = string.Empty;
     public int Order { get; init; }
     public DelegateCommand<NavigationItemViewModel>? NavigateCommand { get; init; }

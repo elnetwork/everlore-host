@@ -62,10 +62,9 @@ public class App : PrismApplication
         // WARNING: Prism v11.0.0-prev4
         // - DataTemplates MUST define a DataType or else an XAML error will be thrown.
         // - Error: DataTemplate inside of DataTemplates must have a DataType set.
-        regionManager.RegisterViewWithRegion(RegionName.Sidebar, typeof(SidebarView));
 
-        regionManager.RegisterViewWithRegion(RegionName.Content, typeof(BackgroundView));
-        regionManager.RequestNavigate(RegionName.Content, nameof(BackgroundView));
+        regionManager.RegisterViewWithRegion(RegionName.Workspace, typeof(BackgroundView));
+        regionManager.RequestNavigate(RegionName.Workspace, nameof(BackgroundView));
     }
 
     /// <summary>Custom region adapter mappings.</summary>

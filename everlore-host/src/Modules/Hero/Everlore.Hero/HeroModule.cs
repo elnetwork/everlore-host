@@ -15,7 +15,10 @@ public class HeroModule : IModule
     public void OnInitialized(IContainerProvider containerProvider)
     {
         var regionManager = containerProvider.Resolve<IRegionManager>();
-        regionManager.RegisterViewWithRegion(RegionName.Content, typeof(HeroMainView));
+        
+        regionManager.RegisterViewWithRegion(RegionName.MenuBar, typeof(HeroMenuBarView));
+        regionManager.RegisterViewWithRegion(RegionName.Ribbon, typeof(HeroRibbonView));
+        regionManager.RegisterViewWithRegion(RegionName.Workspace, typeof(HeroMainView));
     }
     
     public void RegisterTypes(IContainerRegistry containerRegistry)

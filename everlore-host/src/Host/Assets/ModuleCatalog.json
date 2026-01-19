@@ -1,15 +1,11 @@
 ﻿[
   {
-    "Title": "Hero",
-    "ModuleName": "HeroModule",
-    "NavigationPath": "HeroNavigationPath",
+    "Name": "Hero",
     "IconFileName": "moduleHero.svg",
     "Order": 0
   },
   {
-    "Title": "Bestiary",
-    "ModuleName": "BestiaryModule",
-    "NavigationPath": "BestiaryNavigationPath",
+    "Name": "Bestiary",
     "IconFileName": "moduleBestiary.svg",
     "Order": 1
   }

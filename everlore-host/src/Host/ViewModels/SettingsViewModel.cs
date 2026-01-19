@@ -29,7 +29,7 @@ public class SettingsViewModel : ViewModelBase
         };
 
         _regionManager.RequestNavigate(
-            RegionName.Content,
+            RegionName.Workspace,
             nameof(SettingsSubView),
             navParams);
     });

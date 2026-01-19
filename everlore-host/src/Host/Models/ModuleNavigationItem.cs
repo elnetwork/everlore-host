@@ -8,9 +8,7 @@ namespace Everlore.Host.Models;
 [UsedImplicitly]
 public class ModuleNavigationItem
 {
-    public string Title { get; set; } = string.Empty;
-    public string ModuleName { get; set; } = string.Empty;
-    public string NavigationPath { get; set; } = string.Empty;
+    public string Name { get; set; } = string.Empty;
     public string IconFileName { get; set; } = string.Empty;
     public int Order { get; set; }
 }

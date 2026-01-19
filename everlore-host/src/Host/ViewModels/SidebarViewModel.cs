@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Collections.ObjectModel;
 using Everlore.Core.Common;
+using Everlore.Core.Extensions;
 using Everlore.Host.Services;
 using Everlore.Host.Views;
 using Prism.Commands;
@@ -22,19 +23,19 @@ public class SidebarViewModel : ViewModelBase
 
         Title = "Navigation";
 
-        foreach (var info in catalogService.Modules)
+        foreach (var module in catalogService.Modules)
         {
             var item = new NavigationItemViewModel
             {
-                Title           = info.Title,
-                ModuleName      = info.ModuleName,
-                NavigationPath  = info.NavigationPath,
-                IconFilePath    = $"/Assets/Icons/{info.IconFileName}",
-                Order           = info.Order,
+                Name            = module.Name,
+                IconFilePath    = $"/Assets/Icons/{module.IconFileName}",
+                Order           = module.Order,
                 NavigateCommand = new DelegateCommand<NavigationItemViewModel>(_ =>
                 {
-                    moduleManager.LoadModule(info.ModuleName);
-                    regionManager.RequestNavigate(RegionName.Content, info.NavigationPath);
+                    moduleManager.LoadModule(module.Name);
+                    regionManager.RequestNavigate(RegionName.MenuBar, module.Name.MenuNavigationPath);
+                    regionManager.RequestNavigate(RegionName.Ribbon, module.Name.RibbonNavigationPath);
+                    regionManager.RequestNavigate(RegionName.Workspace, module.Name.WorkspaceNavigationPath);
                 })
             };
 
@@ -48,5 +49,5 @@ public class SidebarViewModel : ViewModelBase
 
     public ObservableCollection<NavigationItemViewModel> ModuleItems { get; } = [];
 
-    public DelegateCommand SettingsCommand => new(() => _regionManager.RequestNavigate(RegionName.Content, nameof(SettingsView)));
+    public DelegateCommand SettingsCommand => new(() => _regionManager.RequestNavigate(RegionName.Workspace, nameof(SettingsView)));
 }

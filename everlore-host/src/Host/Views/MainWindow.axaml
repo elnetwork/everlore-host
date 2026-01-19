@@ -13,45 +13,36 @@
         Height="500" Width="700"
         Background="#141414">
 
-  <Panel>
-    <ExperimentalAcrylicBorder IsHitTestVisible="true">
-      <ExperimentalAcrylicBorder.Material>
-        <ExperimentalAcrylicMaterial BackgroundSource="Digger"
-                                     TintColor="LightGray"
-                                     TintOpacity="1"
-                                     MaterialOpacity="0.65" />
-      </ExperimentalAcrylicBorder.Material>
-    </ExperimentalAcrylicBorder>
+  <Grid ColumnDefinitions="Auto,*" RowDefinitions="36,40,*,Auto">
 
-    <Grid ColumnDefinitions="Auto,*" RowDefinitions="*,Auto">
-      <!-- Sidebar -->
-      <Panel Grid.Row="0" Grid.Column="0" Background="#26282B">
+    <!-- Sidebar -->
+    <views:SidebarView Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" />
 
-        <!--
-          The SidebarView is not using a region on purpose, so it shows in designer mode
-          <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionNames.SidebarRegion}" />
-        -->
-        <views:SidebarView />
-      </Panel>
+    <!-- Status bar -->
+    <Panel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Background="#26282B">
+      <StackPanel Orientation="Horizontal" Spacing="5" Margin="5">
+        <TextBlock Text="User Name: " FontWeight="Bold" />
+        <TextBlock Text="PrismAvalonia!" FontStyle="Italic" />
 
-      <!-- Workspace -->
-      <ContentControl Grid.Row="0"
-                      Grid.Column="1"
-                      prism:RegionManager.RegionName="{x:Static core:RegionName.Content}" />
+        <TextBlock Text="Status:" FontWeight="Bold" />
+        <TextBlock Text="Disconnected" />
 
-      <!-- Status bar -->
-      <Panel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Background="#26282B">
-        <StackPanel Orientation="Horizontal" Spacing="5" Margin="5">
-          <TextBlock Text="User Name: " FontWeight="Bold" />
-          <TextBlock Text="PrismAvalonia!" FontStyle="Italic" />
+        <TextBlock Text="Connection Id: " FontWeight="Bold" />
+        <TextBlock Text="0x07CC" FontStyle="Italic" />
+      </StackPanel>
+    </Panel>
 
-          <TextBlock Text="Status:" FontWeight="Bold" />
-          <TextBlock Text="Disconnected" />
+    <!--————— REGIONS —————-->
+    <!-- Menu bar -->
+    <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionName.MenuBar}"
+                    Grid.Row="0" Grid.Column="1"/>
 
-          <TextBlock Text="Connection Id: " FontWeight="Bold" />
-          <TextBlock Text="0x07CC" FontStyle="Italic" />
-        </StackPanel>
-      </Panel>
-    </Grid>
-  </Panel>
+    <!-- Ribbon -->
+    <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionName.Ribbon}"
+                    Grid.Row="1" Grid.Column="1"/>
+
+    <!-- Workspace -->
+    <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionName.Workspace}"
+                    Grid.Row="2" Grid.Column="1" />
+  </Grid>
 </Window>

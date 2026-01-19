@@ -9,7 +9,6 @@
     <ItemGroup>
       <Folder Include="Converters\" />
       <Folder Include="Enumerations\" />
-      <Folder Include="Extensions\" />
     </ItemGroup>
 
     <ItemGroup>
