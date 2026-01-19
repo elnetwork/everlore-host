@@ -13,24 +13,10 @@
         Height="500" Width="700"
         Background="#141414">
 
-  <Grid ColumnDefinitions="Auto,*" RowDefinitions="36,40,*,Auto">
+  <Grid ColumnDefinitions="Auto,*" RowDefinitions="36,40,*,30">
 
     <!-- Module bar -->
     <views:ModuleBarView Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" />
-
-    <!-- Status bar -->
-    <Panel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Background="#26282B">
-      <StackPanel Orientation="Horizontal" Spacing="5" Margin="5">
-        <TextBlock Text="User Name: " FontWeight="Bold" />
-        <TextBlock Text="PrismAvalonia!" FontStyle="Italic" />
-
-        <TextBlock Text="Status:" FontWeight="Bold" />
-        <TextBlock Text="Disconnected" />
-
-        <TextBlock Text="Connection Id: " FontWeight="Bold" />
-        <TextBlock Text="0x07CC" FontStyle="Italic" />
-      </StackPanel>
-    </Panel>
 
     <!--————— REGIONS —————-->
     <!-- Menu bar -->
@@ -44,5 +30,10 @@
     <!-- Workspace -->
     <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionName.Workspace}"
                     Grid.Row="2" Grid.Column="1" />
+
+    <!-- Status bar -->
+    <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionName.StatusBar}"
+                    Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                    Background="#26282B"/>
   </Grid>
 </Window>

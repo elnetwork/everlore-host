@@ -8,6 +8,7 @@ public static class RegionName
 {
     public static readonly string MenuBar   = "MenuBarRegion";
     public static readonly string Ribbon    = "RibbonRegion";
+    public static readonly string StatusBar = "StatusBarRegion";
     public static readonly string Workspace = "WorkspaceRegion";
 }
 

@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Everlore.Hero.Shell.Views.HeroStatusBarView"
+             x:DataType="vm:StatusBarViewModel"
+             x:CompileBindings="True"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Everlore.Hero.Shell.ViewModels"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+
+    <Panel Background="#26282B">
+        <StackPanel Orientation="Horizontal" Spacing="5" Margin="5">
+            <TextBlock Text="Module: " FontWeight="Bold" />
+            <TextBlock Text="Hero!" />
+
+            <TextBlock Text="Status:" FontWeight="Bold" Margin="10 0 0 0" />
+            <TextBlock Text="Work in progress" />
+        </StackPanel>
+    </Panel>
+</UserControl>

@@ -19,10 +19,12 @@ public class Hero : IModule
         regionManager.RegisterViewWithRegion(RegionName.MenuBar, typeof(HeroMenuBarView));
         regionManager.RegisterViewWithRegion(RegionName.Ribbon, typeof(HeroRibbonView));
         regionManager.RegisterViewWithRegion(RegionName.Workspace, typeof(HeroWorkspaceView));
+        regionManager.RegisterViewWithRegion(RegionName.StatusBar, typeof(HeroStatusBarView));
         
         regionManager.RequestNavigate(RegionName.MenuBar, nameof(HeroMenuBarView));
         regionManager.RequestNavigate(RegionName.Ribbon, nameof(HeroRibbonView));
         regionManager.RequestNavigate(RegionName.Workspace, nameof(HeroWorkspaceView));
+        regionManager.RequestNavigate(RegionName.StatusBar, nameof(HeroStatusBarView));
     }
     
     public void RegisterTypes(IContainerRegistry containerRegistry)
@@ -34,6 +36,7 @@ public class Hero : IModule
         containerRegistry.RegisterSingleton<HeroRibbonViewModel>();
         containerRegistry.RegisterSingleton<HeroWorkspaceViewModel>();
         containerRegistry.RegisterSingleton<HeroMenuBarViewModel>();
+        containerRegistry.RegisterSingleton<StatusBarViewModel>();
         containerRegistry.RegisterSingleton<SideBarViewModel>();
     }
 }
