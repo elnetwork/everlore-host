@@ -1,10 +1,9 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
-using Everlore.Bestiary;
 using Everlore.Core.Contracts;
 using Everlore.Core.Common;
-using Everlore.Hero;
+using Everlore.Host.Extensions;
 using Prism.DryIoc;
 using Prism.Ioc;
 using Prism.Modularity;
@@ -32,10 +31,9 @@ public class App : PrismApplication
         // Services.
         containerRegistry.RegisterSingleton<INotificationService, NotificationService>();
         containerRegistry.RegisterSingleton<IModuleCatalogService, ModuleCatalogService>();
-        containerRegistry.RegisterSingleton<IModuleTrackingService, ModuleTrackingService>();
 
         // Navigation.
-        containerRegistry.RegisterForNavigation<BackgroundView>(nameof(BackgroundView));
+        containerRegistry.RegisterForNavigation<BackgroundView>();
         containerRegistry.RegisterForNavigation<SettingsView>();
         containerRegistry.RegisterForNavigation<SettingsSubView>();
 
@@ -48,6 +46,9 @@ public class App : PrismApplication
     protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
     {
         base.ConfigureModuleCatalog(moduleCatalog);
+
+        var moduleManager = Container.Resolve<IModuleManager>();
+        moduleManager.TrackLoadedModules();
 
         // Register all modules.
         moduleCatalog.AddModule<Hero.Hero>(InitializationMode.OnDemand);

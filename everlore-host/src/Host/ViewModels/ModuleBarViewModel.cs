@@ -2,6 +2,7 @@ using System.Linq;
 using System.Collections.ObjectModel;
 using Everlore.Core.Common;
 using Everlore.Core.Extensions;
+using Everlore.Host.Extensions;
 using Everlore.Host.Services;
 using Everlore.Host.Views;
 using Prism.Commands;
@@ -18,10 +19,7 @@ public class ModuleBarViewModel : ViewModelBase
     private readonly IRegionManager _regionManager;
 
     public ModuleBarViewModel(
-        IModuleCatalogService catalogService,
-        IModuleManager moduleManager,
-        IRegionManager regionManager,
-        IModuleTrackingService moduleTrackingService)
+        IModuleCatalogService catalogService, IModuleManager moduleManager, IRegionManager regionManager)
     {
         _regionManager = regionManager;
 
@@ -34,7 +32,7 @@ public class ModuleBarViewModel : ViewModelBase
                 Order           = module.Order,
                 NavigateCommand = new DelegateCommand<NavigationItemViewModel>(_ =>
                 {
-                    if (moduleTrackingService.IsModuleLoaded(module.Name))
+                    if (moduleManager.IsLoaded(module.Name))
                         regionManager.RequestNavigate(HostRegion.Workspace, module.Name.WorkspaceNavigationPath);
                     else
                         moduleManager.LoadModule(module.Name);
