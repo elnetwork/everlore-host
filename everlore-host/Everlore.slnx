@@ -5,11 +5,11 @@
     <Platform Name="x86" />
   </Configurations>
   <Folder Name="/src/" />
-  <Folder Name="/src/Core/">
+  <Folder Name="/src/Everlore.Core/">
     <Project Path="src/Everlore.Core/Everlore.Core.csproj" />
   </Folder>
-  <Folder Name="/src/Host/">
-    <Project Path="src/Host/Everlore.Host.csproj" />
+  <Folder Name="/src/Everlore.Host/">
+    <Project Path="src/Everlore.Host/Everlore.Host.csproj" />
   </Folder>
   <Folder Name="/src/Modules/" />
   <Folder Name="/src/Modules/Bestiary/">
