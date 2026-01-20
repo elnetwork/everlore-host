@@ -3,7 +3,7 @@
              xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"
-             xmlns:views="using:Everlore.Hero.Features.Sidebar.Views"
+             xmlns:core="using:Everlore.Core.Common"
              xmlns:common="using:Everlore.Hero.Common"
              prism:ViewModelLocator.AutoWireViewModel="True"
              Background="#141414">
@@ -16,7 +16,7 @@
         </Panel>
 
         <!-- Workspace -->
-        <ContentControl prism:RegionManager.RegionName="{x:Static common:HeroRegionName.Content}"
+        <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionName.Workspace}"
                         Grid.Row="0" Grid.Column="1" />
     </Grid>
 </UserControl>

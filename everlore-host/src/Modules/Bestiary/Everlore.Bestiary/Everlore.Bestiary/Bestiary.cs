@@ -1,4 +1,5 @@
 ﻿using Everlore.Core.Common;
+using Everlore.Core.Extensions;
 using Everlore.Bestiary.Views;
 using Everlore.Bestiary.Common;
 using JetBrains.Annotations;
@@ -10,14 +11,14 @@ namespace Everlore.Bestiary;
 /// </summary>
 [UsedImplicitly]
 [Module(ModuleName = "Bestiary", OnDemand = true)]
-public class BestiaryModule : IModule
+public class Bestiary : IModule
 {
     public void OnInitialized(IContainerProvider containerProvider)
     {
         var regionManager = containerProvider.Resolve<IRegionManager>();
-        regionManager.RegisterViewWithRegion(RegionName.Workspace, typeof(BestiaryMainView));
+        regionManager.RequestNavigate(RegionName.Workspace, Module.Name.WorkspaceNavigationPath);
     }
     
     public void RegisterTypes(IContainerRegistry containerRegistry) =>
-        containerRegistry.RegisterForNavigation<BestiaryMainView>(Module.Name);
+        containerRegistry.RegisterForNavigation<BestiaryMainView>(Module.Name.WorkspaceNavigationPath);
 }

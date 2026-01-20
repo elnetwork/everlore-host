@@ -7,6 +7,5 @@ public static class Module
 
 public static class HeroRegionName
 {
-    public static readonly string Content = $"{Module.Name}ContentRegion";
     public static readonly string Sidebar = $"{Module.Name}SidebarRegion";
 }

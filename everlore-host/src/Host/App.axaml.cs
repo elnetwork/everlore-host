@@ -50,7 +50,7 @@ public class App : PrismApplication
 
         // Register all modules.
         moduleCatalog.AddModule<Hero.Hero>(InitializationMode.OnDemand);
-        moduleCatalog.AddModule<BestiaryModule>(InitializationMode.OnDemand);
+        moduleCatalog.AddModule<Bestiary.Bestiary>(InitializationMode.OnDemand);
     }
 
     /// <summary>Called after Initialize.</summary>
