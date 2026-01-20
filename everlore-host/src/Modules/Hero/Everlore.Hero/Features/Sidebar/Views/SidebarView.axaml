@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Everlore.Hero.Shell.Views.SidebarView"
+﻿<UserControl x:Class="Everlore.Hero.Features.Sidebar.Views.SidebarView"
              x:DataType="vm:HeroRibbonViewModel"
              x:CompileBindings="True"
              xmlns="https://github.com/avaloniaui"

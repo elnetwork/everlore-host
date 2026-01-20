@@ -2,6 +2,8 @@ using System.Linq;
 using System.Collections.ObjectModel;
 using Everlore.Core.Common;
 using Everlore.Core.Extensions;
+using Everlore.Hero.Common;
+using Everlore.Hero.Extensions;
 using Everlore.Host.Services;
 using Everlore.Host.Views;
 using Prism.Commands;
@@ -36,6 +38,7 @@ public class ModuleBarViewModel : ViewModelBase
                     regionManager.RequestNavigate(RegionName.MenuBar, module.Name.MenuNavigationPath);
                     regionManager.RequestNavigate(RegionName.Ribbon, module.Name.RibbonNavigationPath);
                     regionManager.RequestNavigate(RegionName.Workspace, module.Name.WorkspaceNavigationPath);
+                    regionManager.RequestNavigate(HeroRegionName.Sidebar, module.Name.SidebarNavigationPath);
                 })
             };
 

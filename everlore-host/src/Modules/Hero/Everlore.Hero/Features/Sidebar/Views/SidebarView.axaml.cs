@@ -1,6 +1,6 @@
 ﻿using Avalonia.Controls;
 
-namespace Everlore.Hero.Shell.Views;
+namespace Everlore.Hero.Features.Sidebar.Views;
 
 public partial class SidebarView : UserControl
 {

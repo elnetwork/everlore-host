@@ -1,6 +1,6 @@
 ﻿namespace Everlore.Hero.Shell.ViewModels;
 
-public class SideBarViewModel
+public class HeroStatusBarViewModel
 {
     
 }

@@ -1,11 +1,14 @@
 ﻿using Everlore.Core.Common;
 using Everlore.Bestiary.Views;
+using Everlore.Bestiary.Common;
+using JetBrains.Annotations;
 
 namespace Everlore.Bestiary;
 
 /// <summary>
 /// Module for creating non-player characters and creatures.
 /// </summary>
+[UsedImplicitly]
 [Module(ModuleName = "Bestiary", OnDemand = true)]
 public class BestiaryModule : IModule
 {
@@ -16,5 +19,5 @@ public class BestiaryModule : IModule
     }
     
     public void RegisterTypes(IContainerRegistry containerRegistry) =>
-        containerRegistry.RegisterForNavigation<BestiaryMainView>(ModuleNavigationPath.Bestiary);
+        containerRegistry.RegisterForNavigation<BestiaryMainView>(Module.Name);
 }

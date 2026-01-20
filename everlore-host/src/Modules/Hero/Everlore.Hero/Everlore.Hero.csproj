@@ -17,8 +17,8 @@
 
     <ItemGroup>
       <Folder Include="Features\AddItem\Assets\" />
+      <Folder Include="Features\Sidebar\Commands\" />
       <Folder Include="Models\" />
-      <Folder Include="Services\" />
     </ItemGroup>
 
     <ItemGroup>
@@ -34,16 +34,16 @@
         <DependentUpon>MenuBarView.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
-      <Compile Update="Shell\Views\SidebarView.axaml.cs">
-        <DependentUpon>SidebarView.axaml</DependentUpon>
-        <SubType>Code</SubType>
-      </Compile>
       <Compile Update="Features\AddItem\Views\AddItemView.axaml.cs">
         <DependentUpon>AddItemView.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
       <Compile Update="Features\AddItem\Assets\Icons.axaml.cs">
         <DependentUpon>Icons.axaml</DependentUpon>
+      </Compile>
+      <Compile Update="Features\Sidebar\Views\SidebarView.axaml.cs">
+        <DependentUpon>SidebarView.axaml</DependentUpon>
+        <SubType>Code</SubType>
       </Compile>
     </ItemGroup>
 
