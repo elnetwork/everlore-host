@@ -32,6 +32,7 @@ public class App : PrismApplication
         // Services.
         containerRegistry.RegisterSingleton<INotificationService, NotificationService>();
         containerRegistry.RegisterSingleton<IModuleCatalogService, ModuleCatalogService>();
+        containerRegistry.RegisterSingleton<IModuleTrackingService, ModuleTrackingService>();
 
         // Navigation.
         containerRegistry.RegisterForNavigation<BackgroundView>(nameof(BackgroundView));

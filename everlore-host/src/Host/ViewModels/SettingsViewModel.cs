@@ -16,7 +16,6 @@ public class SettingsViewModel : ViewModelBase
     public SettingsViewModel(IRegionManager regionManager)
     {
         _regionManager = regionManager;
-        Title = "Settings";
     }
 
     public DelegateCommand CmdNavigateToChild => new(() =>

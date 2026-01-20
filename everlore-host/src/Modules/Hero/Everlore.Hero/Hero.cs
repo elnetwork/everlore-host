@@ -27,8 +27,8 @@ public class Hero : IModule
         regionManager.RequestNavigate(HostRegion.Workspace, Module.Name.WorkspaceNavigationPath);
         
         // Feature loading. Workspace inner regions must be registered before loading.
-        regionManager.RegisterViewWithRegion(HeroRegionName.Sidebar, typeof(SidebarView));
-        regionManager.RequestNavigate(HeroRegionName.Sidebar, Module.Name.SidebarNavigationPath);
+        regionManager.RegisterViewWithRegion(HeroRegion.Sidebar, typeof(SidebarView));
+        regionManager.RequestNavigate(HeroRegion.Sidebar, Module.Name.SidebarNavigationPath);
     }
     
     public void RegisterTypes(IContainerRegistry containerRegistry)

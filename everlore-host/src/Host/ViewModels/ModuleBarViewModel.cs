@@ -17,11 +17,13 @@ public class ModuleBarViewModel : ViewModelBase
 {
     private readonly IRegionManager _regionManager;
 
-    public ModuleBarViewModel(IModuleCatalogService catalogService, IModuleManager moduleManager, IRegionManager regionManager)
+    public ModuleBarViewModel(
+        IModuleCatalogService catalogService,
+        IModuleManager moduleManager,
+        IRegionManager regionManager,
+        IModuleTrackingService moduleTrackingService)
     {
         _regionManager = regionManager;
-
-        Title = "Navigation";
 
         foreach (var module in catalogService.Modules)
         {
@@ -30,7 +32,13 @@ public class ModuleBarViewModel : ViewModelBase
                 Name            = module.Name,
                 IconFilePath    = $"/Assets/Icons/{module.IconFileName}",
                 Order           = module.Order,
-                NavigateCommand = new DelegateCommand<NavigationItemViewModel>(_ => moduleManager.LoadModule(module.Name))
+                NavigateCommand = new DelegateCommand<NavigationItemViewModel>(_ =>
+                {
+                    if (moduleTrackingService.IsModuleLoaded(module.Name))
+                        regionManager.RequestNavigate(HostRegion.Workspace, module.Name.WorkspaceNavigationPath);
+                    else
+                        moduleManager.LoadModule(module.Name);
+                })
             };
 
             ModuleItems.Add(item);
@@ -43,5 +51,6 @@ public class ModuleBarViewModel : ViewModelBase
 
     public ObservableCollection<NavigationItemViewModel> ModuleItems { get; } = [];
 
-    public DelegateCommand SettingsCommand => new(() => _regionManager.RequestNavigate(HostRegion.Workspace, nameof(SettingsView)));
+    public DelegateCommand SettingsCommand => new(() =>
+        _regionManager.RequestNavigate(HostRegion.Workspace, nameof(SettingsView)));
 }

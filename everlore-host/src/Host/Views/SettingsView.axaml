@@ -11,7 +11,7 @@
   <DockPanel>
     <StackPanel DockPanel.Dock="Top" Spacing="5">
       <Grid ColumnDefinitions="Auto, *">
-        <TextBlock Text="{Binding Title}"
+        <TextBlock Text="Settings"
                    Grid.Column="1"
                    Margin="5"
                    VerticalAlignment="Center"

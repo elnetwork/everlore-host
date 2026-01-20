@@ -7,7 +7,6 @@
         xmlns:prism="http://prismlibrary.com/"
         xmlns:views="using:Everlore.Host.Views"
         xmlns:vm="using:Everlore.Host.ViewModels"
-        Title="{Binding Title}"
         Icon="/Assets/logo.ico"
         TransparencyLevelHint="AcrylicBlur"
         Height="500" Width="700"

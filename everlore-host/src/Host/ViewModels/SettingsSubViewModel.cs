@@ -17,8 +17,6 @@ public class SettingsSubViewModel : ViewModelBase
     public SettingsSubViewModel(IRegionManager regionManager)
     {
         _regionManager = regionManager;
-
-        Title = "Settings - SubView";
     }
 
     public DelegateCommand CmdNavigateBack => new(() =>

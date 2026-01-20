@@ -15,7 +15,7 @@
         <Button Command="{Binding CmdNavigateBack}" CornerRadius="10">
           <PathIcon Data="{StaticResource {x:Static icons:Icons.ReplyArrow}}" />
         </Button>
-        <TextBlock Grid.Column="1" Text="{Binding Title}" FontWeight="Bold" Margin="5"  VerticalAlignment="Center" />
+        <TextBlock Grid.Column="1" Text="Settings" FontWeight="Bold" Margin="5"  VerticalAlignment="Center" />
       </Grid>
     </StackPanel>
 

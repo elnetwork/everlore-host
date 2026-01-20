@@ -6,9 +6,6 @@ namespace Everlore.Core.Common;
 /// </summary>
 public class ViewModelBase : BindableBase,  INavigationAware
 {
-    private string _title = string.Empty;
-    public string Title { get => _title; set => SetProperty(ref _title, value); }
-
     /// <summary>
     ///   Called to determine if this instance can handle the navigation request.
     ///   Don't call this directly, use <seealso cref="OnNavigatingTo(NavigationContext)"/>.
