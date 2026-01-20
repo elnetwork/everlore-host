@@ -17,8 +17,6 @@
 
     <ItemGroup>
       <Folder Include="Features\AddItem\Assets\" />
-      <Folder Include="Features\Sidebar\Commands\" />
-      <Folder Include="Models\" />
     </ItemGroup>
 
     <ItemGroup>

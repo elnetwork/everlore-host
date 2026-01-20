@@ -34,7 +34,6 @@
 
   <ItemGroup>
     <Folder Include="Assets\Icons\" />
-    <Folder Include="Infrastructure\Logging\" />
   </ItemGroup>
 
 </Project>

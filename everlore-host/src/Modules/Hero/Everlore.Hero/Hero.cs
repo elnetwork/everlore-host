@@ -22,9 +22,9 @@ public class Hero : IModule
         var regionManager = containerProvider.Resolve<IRegionManager>();
         
         // Shell loading. It must happen before feature registering and loading.
-        regionManager.RequestNavigate(RegionName.MenuBar, Module.Name.MenuNavigationPath);
-        regionManager.RequestNavigate(RegionName.Ribbon, Module.Name.RibbonNavigationPath);
-        regionManager.RequestNavigate(RegionName.Workspace, Module.Name.WorkspaceNavigationPath);
+        regionManager.RequestNavigate(HostRegion.MenuBar, Module.Name.MenuNavigationPath);
+        regionManager.RequestNavigate(HostRegion.Ribbon, Module.Name.RibbonNavigationPath);
+        regionManager.RequestNavigate(HostRegion.Workspace, Module.Name.WorkspaceNavigationPath);
         
         // Feature loading. Workspace inner regions must be registered before loading.
         regionManager.RegisterViewWithRegion(HeroRegionName.Sidebar, typeof(SidebarView));

@@ -16,7 +16,7 @@
         </Panel>
 
         <!-- Workspace -->
-        <ContentControl prism:RegionManager.RegionName="{x:Static core:RegionName.Workspace}"
+        <ContentControl prism:RegionManager.RegionName="{x:Static core:HostRegion.Workspace}"
                         Grid.Row="0" Grid.Column="1" />
     </Grid>
 </UserControl>

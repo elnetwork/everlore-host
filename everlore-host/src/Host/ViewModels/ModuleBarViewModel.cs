@@ -43,5 +43,5 @@ public class ModuleBarViewModel : ViewModelBase
 
     public ObservableCollection<NavigationItemViewModel> ModuleItems { get; } = [];
 
-    public DelegateCommand SettingsCommand => new(() => _regionManager.RequestNavigate(RegionName.Workspace, nameof(SettingsView)));
+    public DelegateCommand SettingsCommand => new(() => _regionManager.RequestNavigate(HostRegion.Workspace, nameof(SettingsView)));
 }
