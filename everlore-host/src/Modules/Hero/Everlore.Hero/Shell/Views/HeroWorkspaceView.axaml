@@ -9,10 +9,8 @@
     
     <Grid ColumnDefinitions="Auto,*" RowDefinitions="*,Auto">
         <!-- Side bar -->
-        <Panel Margin="4 0 0 0" Grid.Row="0" Grid.Column="0">
-
-            <ContentControl prism:RegionManager.RegionName="{x:Static common:HeroRegion.Sidebar}" />
-        </Panel>
+        <ContentControl prism:RegionManager.RegionName="{x:Static common:HeroRegion.Sidebar}"
+                        Grid.Row="0" Grid.Column="0"/>
 
         <!-- Workspace -->
         <ContentControl prism:RegionManager.RegionName="{x:Static common:HeroRegion.Workspace}"

@@ -24,7 +24,8 @@
 
     <!-- Ribbon -->
     <ContentControl prism:RegionManager.RegionName="{x:Static core:HostRegion.Ribbon}"
-                    Grid.Row="1" Grid.Column="1"/>
+                    Grid.Row="1" Grid.Column="1"
+                    Margin="4 0 4 1"/>
 
     <!-- Workspace -->
     <ContentControl prism:RegionManager.RegionName="{x:Static core:HostRegion.Workspace}"
