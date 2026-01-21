@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="Everlore.Hero.Shell.Views.HeroMainView"
+             x:DataType="vm:HeroMainViewModel"
+             x:CompileBindings="True"
+             xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Everlore.Hero.Shell.ViewModels"
+             xmlns:prism="http://prismlibrary.com/"
+             xmlns:common="using:Everlore.Hero.Common"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             Background="#141414">
+    
+    <Grid ColumnDefinitions="Auto,*" RowDefinitions="36,40,*">
+        <!-- Menu bar -->
+        <ContentControl prism:RegionManager.RegionName="{x:Static common:HeroRegion.MenuBar}"
+                        Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+
+        <!-- Ribbon -->
+        <ContentControl prism:RegionManager.RegionName="{x:Static common:HeroRegion.Ribbon}"
+                        Grid.Row="1" Grid.Column="0"  Grid.ColumnSpan="2"
+                        Margin="4 0 4 1"/>
+
+        <!-- Side bar -->
+        <ContentControl prism:RegionManager.RegionName="{x:Static common:HeroRegion.Sidebar}"
+                        Grid.Row="2" Grid.Column="0"/>
+
+        <!-- Workspace -->
+        <ContentControl prism:RegionManager.RegionName="{x:Static common:HeroRegion.Workspace}"
+                        Grid.Row="2" Grid.Column="1" />
+    </Grid>
+</UserControl>

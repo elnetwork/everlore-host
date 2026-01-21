@@ -1,19 +1,10 @@
-﻿<UserControl x:Class="Everlore.Hero.Shell.Views.HeroWorkspaceView"
-             x:Name="ViewRoot"
+﻿<UserControl x:Class="Everlore.Hero.Shell.Views.HeroWorkspaceView" 
+             x:DataType="vm:HeroWorkspaceViewModel"
+             x:CompileBindings="True"
              xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="using:Everlore.Hero.Shell.ViewModels"
              xmlns:prism="http://prismlibrary.com/"
-             xmlns:common="using:Everlore.Hero.Common"
-             prism:ViewModelLocator.AutoWireViewModel="True"
-             Background="#141414">
-    
-    <Grid ColumnDefinitions="Auto,*" RowDefinitions="*,Auto">
-        <!-- Side bar -->
-        <ContentControl prism:RegionManager.RegionName="{x:Static common:HeroRegion.Sidebar}"
-                        Grid.Row="0" Grid.Column="0"/>
-
-        <!-- Workspace -->
-        <ContentControl prism:RegionManager.RegionName="{x:Static common:HeroRegion.Workspace}"
-                        Grid.Row="0" Grid.Column="1" />
-    </Grid>
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    Welcome to Avalonia!
 </UserControl>

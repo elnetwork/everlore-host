@@ -12,28 +12,12 @@
         Height="500" Width="700"
         Background="#141414">
 
-  <Grid ColumnDefinitions="Auto,*" RowDefinitions="36,40,*,30">
+  <Grid ColumnDefinitions="Auto,*">
 
     <!-- Module bar -->
-    <views:ModuleBarView Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" />
+    <views:ModuleBarView Grid.Column="0" Grid.Row="0" />
 
-    <!--————— REGIONS —————-->
-    <!-- Menu bar -->
-    <ContentControl prism:RegionManager.RegionName="{x:Static core:HostRegion.MenuBar}"
-                    Grid.Row="0" Grid.Column="1"/>
-
-    <!-- Ribbon -->
-    <ContentControl prism:RegionManager.RegionName="{x:Static core:HostRegion.Ribbon}"
-                    Grid.Row="1" Grid.Column="1"
-                    Margin="4 0 4 1"/>
-
-    <!-- Workspace -->
-    <ContentControl prism:RegionManager.RegionName="{x:Static core:HostRegion.Workspace}"
-                    Grid.Row="2" Grid.Column="1" />
-
-    <!-- Status bar -->
-    <ContentControl prism:RegionManager.RegionName="{x:Static core:HostRegion.StatusBar}"
-                    Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
-                    Background="#26282B"/>
+    <!-- Module space -->
+    <ContentControl prism:RegionManager.RegionName="{x:Static core:HostRegion.ModuleSpace}" Grid.Column="1" />
   </Grid>
 </Window>

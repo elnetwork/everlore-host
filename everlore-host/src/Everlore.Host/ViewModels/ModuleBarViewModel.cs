@@ -32,10 +32,10 @@ public class ModuleBarViewModel : ViewModelBase
                 Order           = module.Order,
                 NavigateCommand = new DelegateCommand<NavigationItemViewModel>(_ =>
                 {
-                    if (moduleManager.IsLoaded(module.Name))
-                        regionManager.RequestNavigate(HostRegion.Workspace, module.Name.WorkspaceNavigationPath);
-                    else
+                    if (!moduleManager.IsLoaded(module.Name))
                         moduleManager.LoadModule(module.Name);
+
+                    regionManager.RequestNavigate(HostRegion.ModuleSpace, module.Name.ModuleSpaceNavigationPath);
                 })
             };
 
@@ -50,5 +50,5 @@ public class ModuleBarViewModel : ViewModelBase
     public ObservableCollection<NavigationItemViewModel> ModuleItems { get; } = [];
 
     public DelegateCommand SettingsCommand => new(() =>
-        _regionManager.RequestNavigate(HostRegion.Workspace, nameof(SettingsView)));
+        _regionManager.RequestNavigate(HostRegion.ModuleSpace, nameof(SettingsView)));
 }

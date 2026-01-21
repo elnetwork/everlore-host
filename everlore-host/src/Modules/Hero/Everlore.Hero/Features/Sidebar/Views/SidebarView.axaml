@@ -8,7 +8,7 @@
              xmlns:prism="http://prismlibrary.com/"
              xmlns:vm="using:Everlore.Hero.Shell.ViewModels"
              prism:ViewModelLocator.AutoWireViewModel="True"
-             Width="{Binding $parent[views:HeroWorkspaceView].((vm:HeroWorkspaceViewModel)DataContext).FlyoutWidth, FallbackValue=200}">
+             Width="{Binding $parent[views:HeroMainView].((vm:HeroMainViewModel)DataContext).FlyoutWidth, FallbackValue=200}">
     
     <UserControl.Styles>
         <Style Selector="Button">

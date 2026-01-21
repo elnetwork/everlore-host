@@ -16,9 +16,9 @@ public class Bestiary : IModule
     public void OnInitialized(IContainerProvider containerProvider)
     {
         var regionManager = containerProvider.Resolve<IRegionManager>();
-        regionManager.RequestNavigate(HostRegion.Workspace, Module.Name.WorkspaceNavigationPath);
+        regionManager.RequestNavigate(HostRegion.ModuleSpace, Module.Name.ModuleSpaceNavigationPath);
     }
     
     public void RegisterTypes(IContainerRegistry containerRegistry) =>
-        containerRegistry.RegisterForNavigation<BestiaryMainView>(Module.Name.WorkspaceNavigationPath);
+        containerRegistry.RegisterForNavigation<BestiaryMainView>(Module.Name.ModuleSpaceNavigationPath);
 }

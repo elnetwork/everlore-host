@@ -20,22 +20,18 @@ public class Hero : IModule
     public void OnInitialized(IContainerProvider containerProvider)
     {
         var regionManager = containerProvider.Resolve<IRegionManager>();
-        
-        // Shell loading. It must happen before feature registering and loading.
-        regionManager.RequestNavigate(HostRegion.MenuBar, Module.Name.MenuNavigationPath);
-        regionManager.RequestNavigate(HostRegion.Ribbon, Module.Name.RibbonNavigationPath);
-        regionManager.RequestNavigate(HostRegion.Workspace, Module.Name.WorkspaceNavigationPath);
-        
-        // Feature loading. Workspace inner regions must be registered before loading.
+
+        regionManager.RegisterViewWithRegion(HeroRegion.MenuBar, typeof(HeroMenuBarView));
+        regionManager.RegisterViewWithRegion(HeroRegion.Ribbon, typeof(HeroRibbonView));
         regionManager.RegisterViewWithRegion(HeroRegion.Sidebar, typeof(SidebarView));
-        regionManager.RequestNavigate(HeroRegion.Sidebar, Module.Name.SidebarNavigationPath);
+        regionManager.RegisterViewWithRegion(HeroRegion.Workspace, typeof(HeroWorkspaceView));
     }
     
     public void RegisterTypes(IContainerRegistry containerRegistry)
     {
         // View-models.
         containerRegistry.RegisterSingleton<HeroRibbonViewModel>();
-        containerRegistry.RegisterSingleton<HeroWorkspaceViewModel>();
+        containerRegistry.RegisterSingleton<HeroMainViewModel>();
         containerRegistry.RegisterSingleton<HeroMenuBarViewModel>();
         containerRegistry.RegisterSingleton<HeroStatusBarViewModel>();
         containerRegistry.RegisterSingleton<SidebarViewModel>();
@@ -43,7 +39,7 @@ public class Hero : IModule
         // Navigation.
         containerRegistry.RegisterForNavigation<HeroMenuBarView>(Module.Name.MenuNavigationPath);
         containerRegistry.RegisterForNavigation<HeroRibbonView>(Module.Name.RibbonNavigationPath);
-        containerRegistry.RegisterForNavigation<HeroWorkspaceView>(Module.Name.WorkspaceNavigationPath);
+        containerRegistry.RegisterForNavigation<HeroMainView>(Module.Name.ModuleSpaceNavigationPath);
         containerRegistry.RegisterForNavigation<SidebarView>(Module.Name.SidebarNavigationPath);
     }
 }

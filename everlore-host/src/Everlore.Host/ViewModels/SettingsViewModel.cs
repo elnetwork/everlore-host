@@ -28,7 +28,7 @@ public class SettingsViewModel : ViewModelBase
         };
 
         _regionManager.RequestNavigate(
-            HostRegion.Workspace,
+            HostRegion.ModuleSpace,
             nameof(SettingsSubView),
             navParams);
     });
