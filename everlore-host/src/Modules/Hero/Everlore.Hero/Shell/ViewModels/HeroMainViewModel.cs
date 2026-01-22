@@ -32,13 +32,4 @@ public class HeroMainViewModel : ViewModelBase
     public int FlyoutWidth { get; set => SetProperty(ref field, value); }
     
     private void OnExpandCollapse() => FlyoutWidth = FlyoutWidth == Expanded ? Collapsed : Expanded;
-    
-    public override void OnNavigatedTo(NavigationContext navigationContext)
-    {
-        // Load all subregions.
-        _regionManager.RequestNavigate(HeroRegion.MenuBar, Module.Name.MenuNavigationPath);
-        _regionManager.RequestNavigate(HeroRegion.Ribbon, Module.Name.RibbonNavigationPath);
-        _regionManager.RequestNavigate(HeroRegion.Workspace, Module.Name.WorkspacePath);
-        _regionManager.RequestNavigate(HeroRegion.Sidebar, Module.Name.SidebarNavigationPath);
-    }
 }

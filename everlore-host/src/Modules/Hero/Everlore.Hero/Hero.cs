@@ -1,5 +1,4 @@
-﻿using Everlore.Core.Common;
-using Everlore.Core.Extensions;
+﻿using Everlore.Core.Extensions;
 using Everlore.Hero.Common;
 using Everlore.Hero.Extensions;
 using Everlore.Hero.Features.Sidebar.ViewModels;
@@ -30,10 +29,9 @@ public class Hero : IModule
     public void RegisterTypes(IContainerRegistry containerRegistry)
     {
         // View-models.
-        containerRegistry.RegisterSingleton<HeroRibbonViewModel>();
         containerRegistry.RegisterSingleton<HeroMainViewModel>();
+        containerRegistry.RegisterSingleton<HeroRibbonViewModel>();
         containerRegistry.RegisterSingleton<HeroMenuBarViewModel>();
-        containerRegistry.RegisterSingleton<HeroStatusBarViewModel>();
         containerRegistry.RegisterSingleton<SidebarViewModel>();
 
         // Navigation.

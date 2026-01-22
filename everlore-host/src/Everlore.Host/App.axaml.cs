@@ -66,7 +66,6 @@ public class App : PrismApplication
         // - Error: DataTemplate inside of DataTemplates must have a DataType set.
 
         regionManager.RegisterViewWithRegion(HostRegion.ModuleSpace, typeof(BackgroundView));
-        regionManager.RequestNavigate(HostRegion.ModuleSpace, nameof(BackgroundView));
     }
 
     /// <summary>Custom region adapter mappings.</summary>
