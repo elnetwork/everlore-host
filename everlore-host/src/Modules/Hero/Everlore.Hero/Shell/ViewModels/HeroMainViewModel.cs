@@ -1,9 +1,5 @@
-﻿using Everlore.Core.Contracts;
-using Everlore.Core.Common;
-using Everlore.Hero.Common;
+﻿using Everlore.Core.Common;
 using Everlore.Hero.Features.AddItem.Events;
-using Everlore.Hero.Features.Sidebar.Views;
-using Everlore.Hero.Extensions;
 using JetBrains.Annotations;
 
 namespace Everlore.Hero.Shell.ViewModels;
@@ -11,19 +7,11 @@ namespace Everlore.Hero.Shell.ViewModels;
 [UsedImplicitly]
 public class HeroMainViewModel : ViewModelBase
 {
-    private readonly INotificationService _notifyService;
-    private readonly IRegionManager _regionManager;
     private const int Collapsed = 40;
     private const int Expanded = 200;
 
-    public HeroMainViewModel(
-        INotificationService notifyService,
-        IEventAggregator eventAggregator,
-        IRegionManager regionManager)
+    public HeroMainViewModel(IEventAggregator eventAggregator)
     {
-        _notifyService = notifyService;
-        _regionManager = regionManager;
-
         eventAggregator.GetEvent<ExpandCollapseSidebarEvent>().Subscribe(OnExpandCollapse, ThreadOption.UIThread);
         
         FlyoutWidth = Expanded;

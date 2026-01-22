@@ -13,13 +13,14 @@ namespace Everlore.Hero;
 /// Module for creating player characters.
 /// </summary>
 [UsedImplicitly]
-[Module(ModuleName = "Hero", OnDemand = true)]
+[Module(ModuleName = nameof(Hero), OnDemand = true)]
 public class Hero : IModule
 {
     public void OnInitialized(IContainerProvider containerProvider)
     {
         var regionManager = containerProvider.Resolve<IRegionManager>();
 
+        // Views are not going to change, so they only need to be registered with their corresponging region.
         regionManager.RegisterViewWithRegion(HeroRegion.MenuBar, typeof(HeroMenuBarView));
         regionManager.RegisterViewWithRegion(HeroRegion.Ribbon, typeof(HeroRibbonView));
         regionManager.RegisterViewWithRegion(HeroRegion.Sidebar, typeof(SidebarView));
@@ -30,14 +31,12 @@ public class Hero : IModule
     {
         // View-models.
         containerRegistry.RegisterSingleton<HeroMainViewModel>();
-        containerRegistry.RegisterSingleton<HeroRibbonViewModel>();
         containerRegistry.RegisterSingleton<HeroMenuBarViewModel>();
+        containerRegistry.RegisterSingleton<HeroRibbonViewModel>();
         containerRegistry.RegisterSingleton<SidebarViewModel>();
+        containerRegistry.RegisterSingleton<HeroWorkspaceViewModel>();
 
-        // Navigation.
-        containerRegistry.RegisterForNavigation<HeroMenuBarView>(Module.Name.MenuNavigationPath);
-        containerRegistry.RegisterForNavigation<HeroRibbonView>(Module.Name.RibbonNavigationPath);
+        // Navigation to the module.
         containerRegistry.RegisterForNavigation<HeroMainView>(Module.Name.ModuleSpaceNavigationPath);
-        containerRegistry.RegisterForNavigation<SidebarView>(Module.Name.SidebarNavigationPath);
     }
 }
