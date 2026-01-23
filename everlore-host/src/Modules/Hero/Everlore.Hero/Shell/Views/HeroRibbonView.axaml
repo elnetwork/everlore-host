@@ -5,7 +5,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:prism="http://prismlibrary.com/"
              xmlns:vm="using:Everlore.Hero.Shell.ViewModels"
-             xmlns:icons="using:Everlore.Core.Themes"
+             xmlns:common="using:Everlore.Core.Common"
              prism:ViewModelLocator.AutoWireViewModel="True"
              Background="#26282B">
     
@@ -26,20 +26,61 @@
             <Setter Property="Height" Value="16" />
         </Style>
     </UserControl.Styles>
-    <Panel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-            <Button Classes="Primary">
-                <StackPanel Orientation="Horizontal">
-                    <PathIcon Data="{StaticResource {x:Static icons:Icons.AddItem}}" />
-                    <TextBlock Text="Add Item" />
+    
+    <UserControl.DataTemplates>
+        <DataTemplate DataType="{x:Type common:RibbonRegularButton}">
+            <Button Command="{Binding Command}"
+                    ToolTip.Tip="{Binding ToolTip}">
+                <StackPanel Orientation="Horizontal"
+                            Spacing="2">
+                    <PathIcon Data="{Binding Icon}" />
+                    <TextBlock Text="{Binding Label}" />
                 </StackPanel>
             </Button>
-            <Button Classes="Secondary">
-                <StackPanel Orientation="Horizontal">
-                    <PathIcon Data="{StaticResource {x:Static icons:Icons.Delete}}" />
-                    <TextBlock Text="Delete" />
-                </StackPanel>
-            </Button>
-        </StackPanel>
-    </Panel>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type common:RibbonSplitButton}">
+            <SplitButton Command="{Binding DefaultCommand}"
+                         ToolTip.Tip="{Binding ToolTip}"
+                         Padding="0">
+                <SplitButton.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <PathIcon Data="{Binding Icon}" />
+                        <TextBlock Text="{Binding Label}" />
+                    </StackPanel>
+                </SplitButton.Content>
+                <SplitButton.Flyout>
+                    <Flyout Placement="Bottom">
+                        <StackPanel>
+                            <ItemsControl ItemsSource="{Binding Items}">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <MenuItem Header="{Binding Label}"
+                                                  Command="{Binding Command}">
+                                            <MenuItem.Icon>
+                                                <PathIcon Width="20"
+                                                          Height="20"
+                                                          Foreground="White"
+                                                          Data="{Binding Icon}" />
+                                            </MenuItem.Icon>
+                                        </MenuItem>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                    </Flyout>
+                </SplitButton.Flyout>
+            </SplitButton>
+        </DataTemplate>
+    </UserControl.DataTemplates>
+    
+    <ItemsControl ItemsSource="{Binding Items}"
+                  HorizontalAlignment="Stretch">
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <StackPanel Orientation="Horizontal"
+                            Spacing="4"
+                            Margin="8,4"/>
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+    </ItemsControl>
 </UserControl>

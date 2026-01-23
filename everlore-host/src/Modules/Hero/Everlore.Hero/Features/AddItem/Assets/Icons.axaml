@@ -3,6 +3,5 @@
                     x:Class="Everlore.Hero.Features.AddItem.Assets.Icons"
                     xmlns:icons="using:Everlore.Hero.Features.AddItem.Assets">
 
-    <StreamGeometry x:Key="{x:Static icons:Icons.AddHero}">M 14 7 V 8 H 8 v 6 H 7 V 8 H 1 V 7 H 7 V 1 h 1 v 6 z</StreamGeometry>
-    <StreamGeometry x:Key="{x:Static icons:Icons.AddSuperHero}">M 14 7 V 8 H 8 v 6 H 7 V 8 H 1 V 7 H 7 V 1 h 1 v 6 z</StreamGeometry>
+    <StreamGeometry x:Key="{x:Static icons:Icons.Action}">M 12.5 6 H 9.1 L 12.759 1.83 12.387 1 H 7 l -0.434 0.252 -4 7 L 3 9 H 5.629 L 2.568 14.248 3 15 h 1.5 l 0.354 -0.146 8 -8 z M 4.293 14 H 3.871 L 6.932 8.752 6.5 8 H 3.862 L 7.29 2 h 3.993 L 7.624 6.17 8 7 h 3.293 z</StreamGeometry>
 </ResourceDictionary>

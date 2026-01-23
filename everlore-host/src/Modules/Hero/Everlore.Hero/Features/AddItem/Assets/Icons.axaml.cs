@@ -7,8 +7,7 @@ namespace Everlore.Hero.Features.AddItem.Assets;
 [UsedImplicitly]
 public partial class Icons : ResourceDictionary
 {
-    public static readonly string AddHero      = "Icon.AddHero";
-    public static readonly string AddSuperHero = "Icon.AddSuperHero";
+    public static readonly string Action = "Icon.AddHero";
     
     public Icons() => InitializeComponent();
 

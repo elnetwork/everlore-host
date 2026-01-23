@@ -1,6 +1,7 @@
-﻿using Everlore.Core.Extensions;
+﻿using Everlore.Core.Contracts;
+using Everlore.Core.Extensions;
 using Everlore.Hero.Common;
-using Everlore.Hero.Extensions;
+using Everlore.Hero.Features.AddItem.Common;
 using Everlore.Hero.Features.Sidebar.ViewModels;
 using Everlore.Hero.Features.Sidebar.Views;
 using Everlore.Hero.Shell.ViewModels;
@@ -35,6 +36,9 @@ public class Hero : IModule
         containerRegistry.RegisterSingleton<HeroRibbonViewModel>();
         containerRegistry.RegisterSingleton<SidebarViewModel>();
         containerRegistry.RegisterSingleton<HeroWorkspaceViewModel>();
+        
+        // Contributors.
+        containerRegistry.Register<IContributor, AddItemContributor>();
 
         // Navigation to the module.
         containerRegistry.RegisterForNavigation<HeroMainView>(Module.Name.ModuleSpaceNavigationPath);

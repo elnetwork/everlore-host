@@ -5,13 +5,11 @@ using Everlore.Hero.Common;
 
 namespace Everlore.Hero.Shell.ViewModels;
 
-public class HeroRibbonViewModel(IEnumerable<IRibbonContributor> allContributors) : ViewModelBase, IRibbonRegistry
+public class HeroRibbonViewModel : ViewModelBase, IRibbonRegistry
 {
-    private bool _isInitialized;
-    
-    private ObservableCollection<RibbonItemBase> Items { get; } = [];
+    private readonly bool _isInitialized;
 
-    public override void OnNavigatedTo(NavigationContext navigationContext)
+    public HeroRibbonViewModel(IEnumerable<IContributor> allContributors)
     {
         if (_isInitialized) return;
         
@@ -24,6 +22,8 @@ public class HeroRibbonViewModel(IEnumerable<IRibbonContributor> allContributors
 
         _isInitialized = true;
     }
+    
+    public ObservableCollection<RibbonItemBase> Items { get; } = [];
 
     public void AddItem(RibbonItemBase item, string group = "") => Items.Add(item);
 }
