@@ -18,7 +18,7 @@ public class AddItemRibbonContributor : IContributor
 
     public void ContributeTo(IBarRegistry registry)
     {
-        List<RibbonRegularButton> items =
+        List<RibbonRegularButton> addItemItems =
         [
             new()
             {
@@ -37,13 +37,22 @@ public class AddItemRibbonContributor : IContributor
                 Command = new AddSuperHeroCommand(() => { }, () => true)
             }
         ];
-        
-        registry.AddItem(new RibbonSplitButton(items)
+
+        registry.AddItem(new RibbonSplitButton(addItemItems)
         {
             Label     = AddItemButton.Label,
             ToolTip   = AddItemButton.ToolTip,
             Icon      = Icons.Action.AsResource<StreamGeometry>(),
-            IsPrimary = true
+            IsPrimary = true,
+            Order     = 0
+        });
+
+        registry.AddItem(new RibbonRegularButton()
+        {
+            Label     = "Test button",
+            ToolTip   = "Test button",
+            Icon      = Icons.Action.AsResource<StreamGeometry>(),
+            Order     = 1
         });
     }
 }
