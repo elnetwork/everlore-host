@@ -8,12 +8,13 @@ using Everlore.Hero.Features.AddItem.ViewModels.Commands;
 
 namespace Everlore.Hero.Features.AddItem.Common;
 
-public class AddItemContributor : IContributor
+public class AddItemRibbonContributor : IContributor
 {
+    public string Area => ActionBar.Ribbon;
     public string ModuleName => Module.Name;
     public string FeatureName => Feature.Name;
 
-    public AddItemContributor() => ResourceManager.MergeFeatureIcons(ModuleName, FeatureName);
+    public AddItemRibbonContributor() => ResourceManager.MergeFeatureIcons(ModuleName, FeatureName);
 
     public void ContributeTo(IBarRegistry registry)
     {

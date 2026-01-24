@@ -12,3 +12,8 @@ public static class HeroRegion
     public static readonly string Sidebar   = $"{Module.Name}SidebarRegion";
     public static readonly string Workspace = $"{Module.Name}WorkspaceRegion";
 }
+
+public static class ActionBar
+{
+    public static readonly string Ribbon = "Ribbon";
+}

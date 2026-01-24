@@ -38,7 +38,7 @@ public class Hero : IModule
         containerRegistry.RegisterSingleton<HeroWorkspaceViewModel>();
         
         // Contributors.
-        containerRegistry.Register<IContributor, AddItemContributor>();
+        containerRegistry.Register<IContributor, AddItemRibbonContributor>();
 
         // Navigation to the module.
         containerRegistry.RegisterForNavigation<HeroMainView>(Module.Name.ModuleSpaceNavigationPath);

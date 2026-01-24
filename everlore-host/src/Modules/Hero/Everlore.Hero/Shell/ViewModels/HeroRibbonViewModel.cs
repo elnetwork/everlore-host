@@ -1,5 +1,4 @@
-﻿using System.Collections.ObjectModel;
-using Everlore.Core.Common;
+﻿using Everlore.Core.Common;
 using Everlore.Core.Contracts;
 using Everlore.Hero.Common;
 
@@ -7,23 +6,22 @@ namespace Everlore.Hero.Shell.ViewModels;
 
 public class HeroRibbonViewModel : ViewModelBase, IBarRegistry
 {
-    private readonly bool _isInitialized;
+    private readonly List<IBarItem> _unsortedItems = [];
 
     public HeroRibbonViewModel(IEnumerable<IContributor> allContributors)
     {
-        if (_isInitialized) return;
         
         var moduleContributors = allContributors
-            .Where(c => c.ModuleName == Module.Name)
+            .Where(c => c.ModuleName == Module.Name && c.Area == ActionBar.Ribbon)
             .ToList();
 
         foreach (var contributor in moduleContributors)
             contributor.ContributeTo(this);
-
-        _isInitialized = true;
+        
+        Items = _unsortedItems.OrderBy(i => i.Order).ToList();
     }
     
-    public ObservableCollection<IBarItem> Items { get; } = [];
+    public IEnumerable<IBarItem> Items { get; }
 
-    public void AddItem(IBarItem item) => Items.Add(item);
+    public void AddItem(IBarItem item) => _unsortedItems.Add(item);
 }
