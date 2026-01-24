@@ -15,7 +15,7 @@ public class AddItemContributor : IContributor
 
     public AddItemContributor() => ResourceManager.MergeFeatureIcons(ModuleName, FeatureName);
 
-    public void ContributeTo(IRibbonRegistry registry)
+    public void ContributeTo(IBarRegistry registry)
     {
         List<RibbonRegularButton> items =
         [

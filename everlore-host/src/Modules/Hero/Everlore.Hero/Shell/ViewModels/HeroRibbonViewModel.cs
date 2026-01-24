@@ -5,7 +5,7 @@ using Everlore.Hero.Common;
 
 namespace Everlore.Hero.Shell.ViewModels;
 
-public class HeroRibbonViewModel : ViewModelBase, IRibbonRegistry
+public class HeroRibbonViewModel : ViewModelBase, IBarRegistry
 {
     private readonly bool _isInitialized;
 
@@ -23,7 +23,7 @@ public class HeroRibbonViewModel : ViewModelBase, IRibbonRegistry
         _isInitialized = true;
     }
     
-    public ObservableCollection<RibbonItemBase> Items { get; } = [];
+    public ObservableCollection<IBarItem> Items { get; } = [];
 
-    public void AddItem(RibbonItemBase item, string group = "") => Items.Add(item);
+    public void AddItem(IBarItem item) => Items.Add(item);
 }

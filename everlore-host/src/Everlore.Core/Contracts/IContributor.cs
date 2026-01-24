@@ -16,5 +16,8 @@ public interface IContributor
     /// </summary>
     string FeatureName { get; }
     
-    void ContributeTo(IRibbonRegistry registry);
+    /// <summary>
+    /// 
+    /// </summary>
+    void ContributeTo(IBarRegistry registry);
 }
