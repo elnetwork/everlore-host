@@ -4,7 +4,7 @@ using Everlore.Core.Contracts;
 using Everlore.Core.Extensions;
 using Everlore.Hero.Common;
 using Everlore.Hero.Features.AddItem.Assets;
-using Everlore.Hero.Features.AddItem.ViewModels.Commands;
+using Everlore.Hero.Features.AddItem.Commands;
 
 namespace Everlore.Hero.Features.AddItem.Common;
 

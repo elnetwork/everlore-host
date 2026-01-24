@@ -1,4 +1,4 @@
-﻿namespace Everlore.Hero.Features.AddItem.ViewModels.Commands;
+﻿namespace Everlore.Hero.Features.AddItem.Commands;
 
 public class AddItemCommand(Action executeMethod, Func<bool> canExecuteMethod)
     : DelegateCommand(executeMethod, canExecuteMethod);
